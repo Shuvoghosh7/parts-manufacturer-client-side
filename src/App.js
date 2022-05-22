@@ -11,6 +11,7 @@ function App() {
       <Navber>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        
       </Routes>
       </Navber>
     </div>

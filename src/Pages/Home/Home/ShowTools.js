@@ -17,7 +17,7 @@ const ShowTools = ({ part }) => {
                 <div class="card-body">
                     <h2 class="card-title">{name}</h2>
                     <p>{description}</p>
-                    <p>minimum_order_quantity:{minimum_order_quantity}</p>
+                    <p>minimumQuantity:{minimum_order_quantity}</p>
                     <p>available_quantity:{available_quantity}</p>
                     <p>price_per_unit:{price_per_unit}</p>
                     <div class="card-actions justify-end">

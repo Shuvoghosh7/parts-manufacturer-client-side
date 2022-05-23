@@ -10,13 +10,13 @@ module.exports = {
       {
         light: {
 
-          "primary": "#176F6B",
+          "primary": "#0FCFEC",
 
-          "secondary": "#FFC000",
+          "secondary": "#19D3AE",
 
           "accent": "#FFEDD5",
 
-          "neutral": "#4B5563",
+          "neutral": "#8391AD",
 
           "base-100": "#FFFFFF",
 

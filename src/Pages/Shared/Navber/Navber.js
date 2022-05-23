@@ -1,7 +1,15 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
+import auth from '../../Firebase/Firebase.init';
 
 const Navber = ({children}) => {
+    const [user, loading] = useAuthState(auth);
+    console.log(user)
+    const logout = () => {
+        signOut(auth);
+      };
     return (
         <div class="drawer drawer-end">
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
@@ -20,7 +28,14 @@ const Navber = ({children}) => {
                         <ul class="menu menu-horizontal gap-x-2">
 
                             <li><NavLink to='/' className='rounded-lg'>Home</NavLink></li>
-                            <li><NavLink to='/singin' className='rounded-lg'>SingIn</NavLink></li>
+                            <li>{user?<button className='btn btn-primary uppercase text-white bg-gradient-to-r from-secondary to-primary rounded-lg' onClick={logout}>sing out</button> :<NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
+                            {
+                                user && <li>
+                                <p className=' btn-primary uppercase  bg-gradient-to-r from-primary to-secondary rounded-lg'>
+                                {user.displayName}
+                                </p>
+                            </li>
+                            }
 
                         </ul>
                     </div>

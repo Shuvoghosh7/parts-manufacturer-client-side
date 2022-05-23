@@ -121,7 +121,7 @@ const Singup = () => {
                         {singInError}
                         <input className='btn w-full max-w-xs' type="submit" value="Sing Up" />
                     </form>
-                    <p>Allready have an account? <Link className='text-secondary' to="/login">Please Login</Link></p>
+                    <p>Allready have an account? <Link className='text-secondary' to="/singin">Please Login</Link></p>
 
                     <div className="divider">OR</div>
                     <div className="flex justify-between">

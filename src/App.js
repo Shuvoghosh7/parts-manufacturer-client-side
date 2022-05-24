@@ -13,7 +13,13 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import Review from './Pages/Dashboard/Review';
 import Myprofile from './Pages/Dashboard/Myprofile';
-
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import RequireAdmin from './Pages/Authentication/RequireAdmin/RequireAdmin';
 
 
 
@@ -38,10 +44,15 @@ function App() {
         <Route path='myorder' element={<MyOrders/>} />
         <Route path='review' element={<Review/>} />
         <Route path='myprofile' element={<Myprofile/>} />
+        <Route path='manageOrders' element={<RequireAdmin><ManageAllOrders/></RequireAdmin>} />
+        <Route path='AddProduct' element={<RequireAdmin><AddProduct/></RequireAdmin>} />
+        <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin/></RequireAdmin>} />
+        <Route path='manageProducts' element={<RequireAdmin><ManageProducts/></RequireAdmin>} />
         </Route>
         <Route path='*' element={<Notfound/>}/>
       </Routes>
       <Footer/>
+      <ToastContainer />
       </Navber>
     </div>
   );

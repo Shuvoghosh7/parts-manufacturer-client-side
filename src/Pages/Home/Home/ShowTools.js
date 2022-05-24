@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const ShowTools = ({ part }) => {
-    const {_id, picture, name, description, minimum_order_quantity, available_quantity, price_per_unit
+    const {_id, picture, pname, description, minimum_order_quantity, available_quantity, price_per_unit
     } = part
 
     const navigate=useNavigate()
@@ -15,7 +15,7 @@ const ShowTools = ({ part }) => {
             <div class="card w-96 bg-base-100 shadow-xl">
                 <figure><img src={picture} alt="Shoes" /></figure>
                 <div class="card-body">
-                    <h2 class="card-title">{name}</h2>
+                    <h2 class="card-title">{pname}</h2>
                     <p>{description}</p>
                     <p>minimumQuantity:{minimum_order_quantity}</p>
                     <p>available_quantity:{available_quantity}</p>

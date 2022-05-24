@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../Firebase/Firebase.init';
 
 const Purchase = () => {
     const { purchaseId } = useParams()
     const [parts, setParts] = useState([])
-    // console.log(parts)
+    console.log(parts)
     const [user, loading] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     useEffect(() => {
@@ -27,7 +28,10 @@ const Purchase = () => {
             body:JSON.stringify(data)
         })
         .then(res =>res.json())
-        .then(data =>console.log(data))
+        .then(data =>{
+            toast.success('Order added Successfully')
+            console.log(data)
+        })
     }
     return (
         <div>
@@ -35,7 +39,7 @@ const Purchase = () => {
                 <div class="hero-content flex-col lg:flex-row">
                     <img src={parts.picture} />
                     <div>
-                        <h1 class="text-5xl font-bold">{parts.name}</h1>
+                        <h1 class="text-5xl font-bold">{parts.pname}</h1>
                         <p className='py-2'><span className='text-success font-bold text-lg'>Description:</span>{parts.description}</p>
                         <p class="py-2"><span className='text-success font-bold text-lg'>minimumQuantity:</span> {parts.minimum_order_quantity}</p>
                         <p class="py-2"><span className='text-success font-bold text-lg'>Available Quantity:</span> {parts.available_quantity}</p>
@@ -46,14 +50,14 @@ const Purchase = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex h-screen justify-center items-center my-6'>
+            <div className='flex h-screen justify-center items-center my-12'>
                 <div class="card w-96 bg-info shadow-xl">
                     <div class="card-body items-center text-center">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">User Name</span>
-                                </label>
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
                                 <input
                                     type="name"
                                     value={user?.displayName}
@@ -64,9 +68,9 @@ const Purchase = () => {
 
                             </div>
                             <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">User Email</span>
-                                </label>
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
                                 <input
                                     type="Email"
                                     value={user?.email}
@@ -77,9 +81,9 @@ const Purchase = () => {
 
                             </div>
                             <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Address</span>
-                                </label>
+                            <label className="label">
+                                <span className="label-text">Address</span>
+                            </label>
                                 <input
                                     type="text"
                                     placeholder="Your Address"
@@ -89,9 +93,9 @@ const Purchase = () => {
 
                             </div>
                             <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Number</span>
-                                </label>
+                            <label className="label">
+                                <span className="label-text">Number</span>
+                            </label>
                                 <input
                                     type="text"
                                     placeholder="Your Number"
@@ -101,16 +105,47 @@ const Purchase = () => {
 
                             </div>
                             <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Product Name</span>
+                            </label>
+                                <input
+                                    type="text"
+                                    value={parts.pname}
+                                    className="input input-bordered w-full max-w-xs"
+                                    {...register("pname")}
+                                />
+
+                            </div>
+                            
+                            <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text">Quantity</span>
                                 </label>
                                 <input
                                     type="number"
+                                    min={parts.minimum_order_quantity} max={parts.available_quantity}
+                                    defaultValue={parts.minimum_order_quantity}
+                                    
                                     className="input input-bordered w-full max-w-xs"
                                     {...register("quantity")}
                                 />
 
                             </div>
+                            <div className="form-control w-full max-w-xs">
+                                <label className="label">
+                                    <span className="label-text">Price</span>
+                                </label>
+                                <input
+                                    type="number"
+                                    value={parts.price_per_unit}
+                                    
+                                    className="input input-bordered w-full max-w-xs"
+                                    {...register("price_per_unit")}
+                                />
+
+                            </div>
+                            
+                            
 
                             <input className='btn w-full max-w-xs mt-5' type="submit" value="complete the purchase" />
 

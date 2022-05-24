@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../Firebase/Firebase.init';
 import Loading from '../Shared/Loading/Loading';
+import useToken from '../../Hooks/useToken';
 
 const Singup = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -17,19 +18,17 @@ const Singup = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
       const [updateProfile, updating, updatingerror] = useUpdateProfile(auth);
-    const onSubmit = async data => {
-        console.log(data)
-        await createUserWithEmailAndPassword(data.email,data.password)
-        await updateProfile({ displayName:data.name})
+      const[token]=useToken(user||googleuser)
 
-    }
+    
     const navigate = useNavigate();
     const location = useLocation();
-    useEffect(()=>{
-        if(googleuser || user){
-            navigate('/')
-        }
-    },[googleuser,user])
+    
+   useEffect(()=>{
+    if(googleuser || user){
+        // navigate('/')
+    }
+   },[googleuser, user])
     const from = location.state?.from?.pathname || "/";
     if( loading || googleloading || updating){
         return <Loading/>
@@ -37,6 +36,12 @@ const Singup = () => {
     let singInError;
     if (googleError || error || updatingerror) {
         singInError = <p className='text-red-500'>{googleError?.message || error?.message || updatingerror?.message}</p>
+    }
+    const onSubmit = async data => {
+        console.log(data)
+        await createUserWithEmailAndPassword(data.email,data.password)
+        await updateProfile({ displayName:data.name})
+
     }
     return (
         <div className='flex h-screen justify-center items-center my-16'>

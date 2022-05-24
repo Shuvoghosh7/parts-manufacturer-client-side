@@ -8,6 +8,7 @@ import auth from '../Firebase/Firebase.init';
 import Loading from '../Shared/Loading/Loading';
 
 
+
 const Singin = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithGoogle, googleuser, googleloading, googleError] = useSignInWithGoogle(auth);
@@ -18,7 +19,7 @@ const Singin = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-
+   
     let singInError;
     if(error || googleError){
         singInError= <p className='text-red-500'>{error?.message || googleError?.message}</p>

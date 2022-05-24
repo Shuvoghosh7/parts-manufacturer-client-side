@@ -4,7 +4,7 @@ import ShowTools from './ShowTools';
 
 const Tools = () => {
     const { data: parts, isLoading } = useQuery('parts', () => fetch('http://localhost:5000/get-parts').then(res => res.json()))
-    console.log(parts)
+    
     return (
         <div>
             <h1 className='text-2xl font-bold my-4'>Tools:</h1>

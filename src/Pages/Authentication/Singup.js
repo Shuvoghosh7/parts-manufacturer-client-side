@@ -24,12 +24,11 @@ const Singup = () => {
     const navigate = useNavigate();
     const location = useLocation();
     
-   useEffect(()=>{
-    if(googleuser || user){
-        // navigate('/')
+   
+    if(token){
+        navigate('/')
     }
-   },[googleuser, user])
-    const from = location.state?.from?.pathname || "/";
+    
     if( loading || googleloading || updating){
         return <Loading/>
     }

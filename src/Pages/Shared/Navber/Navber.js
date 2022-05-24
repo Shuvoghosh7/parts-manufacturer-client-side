@@ -9,6 +9,7 @@ const Navber = ({ children }) => {
     const{pathname}=useLocation()
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem("AccessToken")
     };
     return (
         <div class="drawer drawer-end">

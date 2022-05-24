@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../Firebase/Firebase.init';
 import Loading from '../Shared/Loading/Loading';
+import useToken from '../../Hooks/useToken';
 
 
 
@@ -19,7 +20,7 @@ const Singin = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
-   
+    const[token]=useToken(user||googleuser)
     let singInError;
     if(error || googleError){
         singInError= <p className='text-red-500'>{error?.message || googleError?.message}</p>
@@ -30,10 +31,10 @@ const Singin = () => {
       let location = useLocation();
       let from = location.state?.from?.pathname || "/";
       useEffect( () =>{
-        if (user||googleuser) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [user,googleuser, from, navigate])
+    }, [token,from, navigate])
 
     if (loading || googleloading) {
         return <Loading/>

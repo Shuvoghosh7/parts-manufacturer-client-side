@@ -136,7 +136,7 @@ const Purchase = () => {
                                 <input
                                     type="number"
                                     defaultValue={parts.price_per_unit}
-                                    readOnly
+                                   
                                     className="input input-bordered w-full max-w-xs"
                                     {...register("price_per_unit")}
                                 />

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 
-const useToken=(user)=>{
-    const[token,setToken]=useState('')
-    useEffect(()=>{
+const useToken = (user) => {
+    const [token, setToken] = useState('')
+    useEffect(() => {
         const email = user?.user?.email
         const currentUser = { email: email }
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://agile-eyrie-75679.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'Content-type': 'application/json'
@@ -20,7 +20,7 @@ const useToken=(user)=>{
                     setToken(accessToken)
                 });
         }
-    },[user])
+    }, [user])
     return [token]
 }
 export default useToken;

@@ -9,11 +9,11 @@ const CheckoutForm = ({ order }) => {
     const [success, setSuccess] = useState('')
     const [prosessing, setProcessing] = useState(false)
     const [transactionId, setTransactionId] = useState('')
-    const { _id,quantity, price_per_unit ,name,email} = order
+    const { _id, quantity, price_per_unit, name, email } = order
     const price = (quantity * price_per_unit)
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://agile-eyrie-75679.herokuapp.com/create-payment-intent', {
             method: "POST",
             headers: {
                 'Content-type': 'application/json',
@@ -73,19 +73,19 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/order/${_id}`,{
+            fetch(`https://agile-eyrie-75679.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
                     'authorization': `Bearer ${localStorage.getItem('AccessToken')}`
                 },
-                body: JSON.stringify(payment)  
+                body: JSON.stringify(payment)
             })
-            .then(res =>res.json())
-            .then(data =>{
-                setProcessing(false)
-                console.log(data)
-            })
+                .then(res => res.json())
+                .then(data => {
+                    setProcessing(false)
+                    console.log(data)
+                })
         }
     }
     return (

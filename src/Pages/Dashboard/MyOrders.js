@@ -9,7 +9,7 @@ const MyOrders = () => {
     console.log(orders)
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/orders?email=${user.email}`)
+            fetch(`https://agile-eyrie-75679.herokuapp.com/orders?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => setOrder(data));
         }
@@ -26,7 +26,7 @@ const MyOrders = () => {
                             <th>Email</th>
                             <th>Quantity</th>
                             <th>Price</th>
-                            <th>Action</th>  
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

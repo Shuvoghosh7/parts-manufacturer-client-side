@@ -10,29 +10,29 @@ const Purchase = () => {
     const [parts, setParts] = useState([])
     console.log(parts)
     const [user, loading] = useAuthState(auth);
-    const { register, formState: { errors }, handleSubmit  } = useForm();
+    const { register, formState: { errors }, handleSubmit } = useForm();
     useEffect(() => {
-        fetch(`http://localhost:5000/get-parts/${purchaseId}`)
+        fetch(`https://agile-eyrie-75679.herokuapp.com/get-parts/${purchaseId}`)
             .then(res => res.json())
             .then(data => setParts(data))
-            
+
     }, [])
-    
-    
- 
+
+
+
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/add-orders",{
-            method:"POST",
-            headers:{
+        fetch("https://agile-eyrie-75679.herokuapp.com/add-orders", {
+            method: "POST",
+            headers: {
                 'content-type': 'application/json'
             },
-            body:JSON.stringify(data)
+            body: JSON.stringify(data)
         })
-        .then(res =>res.json())
-        .then(data =>{
-            toast.success('Order added Successfully')
-            console.log(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                toast.success('Order added Successfully')
+                console.log(data)
+            })
     }
     return (
         <div>
@@ -53,9 +53,9 @@ const Purchase = () => {
                     <div class="card-body items-center text-center">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text">Name</span>
-                            </label>
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
                                 <input
                                     type="name"
                                     value={user?.displayName}
@@ -66,9 +66,9 @@ const Purchase = () => {
 
                             </div>
                             <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
                                 <input
                                     type="Email"
                                     value={user?.email}
@@ -79,9 +79,9 @@ const Purchase = () => {
 
                             </div>
                             <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text">Address</span>
-                            </label>
+                                <label className="label">
+                                    <span className="label-text">Address</span>
+                                </label>
                                 <input
                                     type="text"
                                     placeholder="Your Address"
@@ -91,9 +91,9 @@ const Purchase = () => {
 
                             </div>
                             <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text">Number</span>
-                            </label>
+                                <label className="label">
+                                    <span className="label-text">Number</span>
+                                </label>
                                 <input
                                     type="text"
                                     placeholder="Your Number"
@@ -103,9 +103,9 @@ const Purchase = () => {
 
                             </div>
                             <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text">Product Name</span>
-                            </label>
+                                <label className="label">
+                                    <span className="label-text">Product Name</span>
+                                </label>
                                 <input
                                     type="text"
                                     defaultValue={parts.pname}
@@ -114,7 +114,7 @@ const Purchase = () => {
                                 />
 
                             </div>
-                            
+
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text">Quantity</span>
@@ -123,7 +123,7 @@ const Purchase = () => {
                                     type="number"
                                     min={parts.minimum_order_quantity} max={parts.available_quantity}
                                     defaultValue={parts.minimum_order_quantity}
-                                    
+
                                     className="input input-bordered w-full max-w-xs"
                                     {...register("quantity")}
                                 />
@@ -145,7 +145,7 @@ const Purchase = () => {
 
                             <input className='btn w-full max-w-xs mt-5' type="submit" value="complete the purchase" />
 
-                        
+
                         </form>
 
                     </div>

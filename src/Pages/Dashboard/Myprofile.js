@@ -14,7 +14,7 @@ const Myprofile = () => {
             ...data,
             email: user?.email
         };
-        fetch("http://localhost:5000/profile", {
+        fetch("https://agile-eyrie-75679.herokuapp.com/profile", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -31,7 +31,7 @@ const Myprofile = () => {
             })
         reset()
     }
-    const { data: profile, isLoading } = useQuery('profile', () => fetch(`http://localhost:5000/get-profile?email=${user.email}`).then(res => res.json()))
+    const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://agile-eyrie-75679.herokuapp.com/get-profile?email=${user.email}`).then(res => res.json()))
     console.log(profile)
     if (isLoading) {
         return <Loading />

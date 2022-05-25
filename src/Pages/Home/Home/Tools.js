@@ -3,8 +3,8 @@ import { useQuery } from 'react-query';
 import ShowTools from './ShowTools';
 
 const Tools = () => {
-    const { data: parts, isLoading } = useQuery('parts', () => fetch('http://localhost:5000/get-parts').then(res => res.json()))
-    
+    const { data: parts, isLoading } = useQuery('parts', () => fetch('https://agile-eyrie-75679.herokuapp.com/get-parts').then(res => res.json()))
+
     return (
         <div>
             <h1 className='text-2xl font-bold my-4'>Tools:</h1>

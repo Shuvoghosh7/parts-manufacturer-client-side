@@ -6,9 +6,9 @@ import MakeAdminRow from './MakeAdminRow';
 
 const MakeAdmin = () => {
     const navigate = useNavigate()
-    const { data: users, isLoading,refetch} = useQuery('users', () => fetch('http://localhost:5000/user',{
-        method:"GET",
-        headers:{
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://agile-eyrie-75679.herokuapp.com/user', {
+        method: "GET",
+        headers: {
             'authorization': `Bearer ${localStorage.getItem('AccessToken')}`
         }
     })
@@ -26,7 +26,7 @@ const MakeAdmin = () => {
                             <th></th>
                             <th>Email</th>
                             <th>Action</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody>

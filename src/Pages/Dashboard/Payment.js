@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51L0hWCDu4I2uHR4DpnxPO6LUdEl9Ek43sD78cHMnu2wyiKtiNetsFXakgW3ljI2n8ncmZEBCfbuB6iKhy9O1QBJ100nVvqXQpG');
 const Payment = () => {
     const { id } = useParams()
-    const url = `http://localhost:5000/order/${id}`
+    const url = `https://agile-eyrie-75679.herokuapp.com/order/${id}`
     const { data: order, isLoading } = useQuery(['profile', id], () => fetch(url, {
         method: "GET",
         headers: {

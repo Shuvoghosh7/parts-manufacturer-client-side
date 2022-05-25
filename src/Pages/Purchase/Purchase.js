@@ -10,18 +10,19 @@ const Purchase = () => {
     const [parts, setParts] = useState([])
     console.log(parts)
     const [user, loading] = useAuthState(auth);
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit  } = useForm();
     useEffect(() => {
         fetch(`http://localhost:5000/get-parts/${purchaseId}`)
             .then(res => res.json())
             .then(data => setParts(data))
+            
     }, [])
     
     
  
     const onSubmit = (data) => {
         fetch("http://localhost:5000/add-orders",{
-            method:"Post",
+            method:"POST",
             headers:{
                 'content-type': 'application/json'
             },
@@ -44,9 +45,6 @@ const Purchase = () => {
                         <p class="py-2"><span className='text-success font-bold text-lg'>minimumQuantity:</span> {parts.minimum_order_quantity}</p>
                         <p class="py-2"><span className='text-success font-bold text-lg'>Available Quantity:</span> {parts.available_quantity}</p>
                         <p class="py-6"><span className='text-success font-bold text-lg'>price per unit:</span>{parts.price_per_unit}</p>
-
-                        <p>{user.displayName}</p>
-                        <p>{user.email}</p>
                     </div>
                 </div>
             </div>
@@ -110,7 +108,7 @@ const Purchase = () => {
                             </label>
                                 <input
                                     type="text"
-                                    value={parts.pname}
+                                    defaultValue={parts.pname}
                                     className="input input-bordered w-full max-w-xs"
                                     {...register("pname")}
                                 />
@@ -137,15 +135,13 @@ const Purchase = () => {
                                 </label>
                                 <input
                                     type="number"
-                                    value={parts.price_per_unit}
-                                    
+                                    defaultValue={parts.price_per_unit}
+                                    readOnly
                                     className="input input-bordered w-full max-w-xs"
                                     {...register("price_per_unit")}
                                 />
 
                             </div>
-                            
-                            
 
                             <input className='btn w-full max-w-xs mt-5' type="submit" value="complete the purchase" />
 

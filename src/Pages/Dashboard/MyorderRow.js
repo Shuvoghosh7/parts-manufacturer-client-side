@@ -1,7 +1,9 @@
 import React from 'react';
 
 const MyorderRow = ({order}) => {
-    const{_id,pname,email,quantity,price}=order
+    console.log(order)
+    const{_id,pname,email,quantity,price_per_unit
+    }=order
 
     const handealDelete = (deletId) => {
         const proceed = window.confirm("are you confirm,Delit This Item?")
@@ -25,7 +27,7 @@ const MyorderRow = ({order}) => {
             <th>{pname}</th>
             <th>{email}</th>
             <th>{quantity}</th>
-            <th>{price}</th>
+            <th>{price_per_unit}</th>
             <th><button class="btn btn-success btn-xs">Pay</button> <button class="btn btn-error btn-xs" onClick={()=>handealDelete(_id)}>X</button></th>
             
         </tr>

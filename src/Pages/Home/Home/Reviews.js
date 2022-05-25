@@ -1,18 +1,26 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading/Loading';
+import ShowReview from '../ShowReview';
 
 const Reviews = () => {
+    const { data: reviews, isLoading } = useQuery('review', () => fetch('http://localhost:5000/get-review').then(res => res.json()))
+
+    if (isLoading) {
+        return <Loading />
+    }
     return (
         <div>
             <h1 className='text-xl font-bold'>Reviews</h1>
 
-            <div class="card w-[300px] bg-base-100 shadow-xl image-full lg:mx-16">
-                <figure><img className='w-full' src="https://i.ibb.co/5ckpTrF/images.jpg" alt="Shoes" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    
-                </div>
+            <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 '>
+                {
+                    reviews.map(review => <ShowReview
+                        review={review}
+                    />)
+                }
             </div>
+
 
         </div>
     );

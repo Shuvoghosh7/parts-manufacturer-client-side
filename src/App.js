@@ -20,6 +20,7 @@ import ManageProducts from './Pages/Dashboard/ManageProducts';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RequireAdmin from './Pages/Authentication/RequireAdmin/RequireAdmin';
+import Payment from './Pages/Dashboard/Payment';
 
 
 
@@ -44,6 +45,7 @@ function App() {
         <Route path='myorder' element={<MyOrders/>} />
         <Route path='review' element={<Review/>} />
         <Route path='myprofile' element={<Myprofile/>} />
+        <Route path='payment/:id' element={<Payment/>} />
         <Route path='manageOrders' element={<RequireAdmin><ManageAllOrders/></RequireAdmin>} />
         <Route path='AddProduct' element={<RequireAdmin><AddProduct/></RequireAdmin>} />
         <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin/></RequireAdmin>} />

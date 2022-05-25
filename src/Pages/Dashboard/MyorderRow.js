@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MyorderRow = ({order}) => {
-    console.log(order)
     const{_id,pname,email,quantity,price_per_unit
     }=order
 

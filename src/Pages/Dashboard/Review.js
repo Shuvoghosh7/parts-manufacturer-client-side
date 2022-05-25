@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 const Review = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register,reset, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = (data) => {
         fetch("http://localhost:5000/review",{
             method:"POST",
@@ -17,6 +17,7 @@ const Review = () => {
         .then(data =>{
             toast.success('Review added Successfully')
             console.log(data)
+            reset();
         })
     }
     return (

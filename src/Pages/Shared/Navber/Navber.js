@@ -6,7 +6,7 @@ import auth from '../../Firebase/Firebase.init';
 
 const Navber = ({ children }) => {
     const [user, loading] = useAuthState(auth);
-    const{pathname}=useLocation()
+    const { pathname } = useLocation()
     const logout = () => {
         signOut(auth);
         localStorage.removeItem("AccessToken")
@@ -35,9 +35,9 @@ const Navber = ({ children }) => {
                             <li><NavLink to='/' className='rounded-lg'>Home</NavLink></li>
                             <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li>
                             <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li>
-                            
-                            {user&&<li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>}
-                           
+
+                            {user && <li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>}
+
                             <li>{user ? <button className='btn btn-primary uppercase text-white bg-gradient-to-r from-secondary to-primary rounded-lg' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
                             {
                                 user && <li>
@@ -58,8 +58,12 @@ const Navber = ({ children }) => {
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
 
                     <li><NavLink to='/' className='rounded-lg'>Home</NavLink></li>
-                    <li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>
+                    <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li>
+                    <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li>
 
+                    {user && <li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>}
+                    <li>{user ? <button className='btn btn-primary uppercase text-white bg-gradient-to-r from-secondary to-primary rounded-lg' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
+                    
 
                 </ul>
 

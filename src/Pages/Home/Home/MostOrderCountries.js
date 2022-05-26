@@ -6,8 +6,8 @@ import Zealand from '../../../images/countries/Zealand.png'
 
 const MostOrderCountries = () => {
     return (
-        <div className='my-5'>
-            <h1 className='text-2xl font-bold mb-3'>Most order countries are:</h1>
+        <div className='my-16'>
+            <h1 className='text-2xl font-bold my-6'>Most order countries are:</h1>
             <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-4 lg:mx-16'>
                 <div>
                     <img src={Bangladesh} alt="" />

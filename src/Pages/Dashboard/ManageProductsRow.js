@@ -5,7 +5,7 @@ const ManageProductsRow = ({ product, index }) => {
 
     const handealDelete = (deletId) => {
 
-        const url = `http://localhost:5000/detete-parts/${deletId}`
+        const url = `https://agile-eyrie-75679.herokuapp.com/detete-parts/${deletId}`
         fetch(url, {
             method: 'DELETE'
 

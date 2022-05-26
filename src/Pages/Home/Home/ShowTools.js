@@ -17,11 +17,11 @@ const ShowTools = ({ part }) => {
                 <div class="card-body">
                     <h2 class="card-title">{pname}</h2>
                     <p>{description}</p>
-                    <p>minimumQuantity:{minimum_order_quantity}</p>
-                    <p>available_quantity:{available_quantity}</p>
-                    <p>price_per_unit:{price_per_unit}</p>
+                    <p><span className='font-bold'>minimumQuantity:</span>{minimum_order_quantity}</p>
+                    <p><span className='font-bold'>available_quantity:</span>{available_quantity}</p>
+                    <p><span className='font-bold'>price_per_unit:</span>{price_per_unit}</p>
                     <div class="card-actions justify-end">
-                        <button class="btn btn-primary" onClick={()=>purchaseDetails(_id)}>Buy Now</button>
+                        <button class="btn btn-primary" onClick={()=>purchaseDetails(_id)}>Order Now</button>
                     </div>
                 </div>
             </div>

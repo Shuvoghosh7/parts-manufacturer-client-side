@@ -1,6 +1,24 @@
-# Getting Started with Create React App
+# Computer Parts Manufacturer
+# Client-side code Github repository LinK:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# server-side code Github repository LinK:
+ https://github.com/programming-hero-web-course1/manufacturer-website-server-side-Shuvoghosh7
+# Admin Email & Password:
+
+## Features and Functionality:
+* This project have  navbar, banner, Parts section,Business Summary,Most order countries are section,Upcoming Products section,Reviews and a footer.
+
+* Parts section have product image,price,description,quintity and a order button.
+* When click order button go purchase page and hear see product details and a from for add order
+* This system have firebase Email and password login system
+* And also have Google Login System.
+* When user logi then see Dashboard route.inside dashboard normal use see user order, give user review and user profile
+* System have card payment system.
+* When user pay then see tranjection ID in myorder page
+* When admin login then admin can make admin,admin can add new product,admin can manage all product and also see profile.
+* This system use mongodb database 
+* Have blog route and this route add 6 question and answer
+* Have My Portfolio rout here add my profile.
 
 ## Available Scripts
 

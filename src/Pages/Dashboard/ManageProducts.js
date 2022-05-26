@@ -6,7 +6,7 @@ import ManageProductsRow from './ManageProductsRow';
 
 
 const ManageProducts = () => {
-    const { data: parts, isLoading } = useQuery('parts', () => fetch('http://localhost:5000/get-parts').then(res => res.json()))
+    const { data: parts, isLoading } = useQuery('parts', () => fetch('https://agile-eyrie-75679.herokuapp.com/get-parts').then(res => res.json()))
     console.log(parts)
     if (isLoading) {
         return <Loading />
@@ -35,7 +35,7 @@ const ManageProducts = () => {
                 </tbody>
             </table>
         </div>
-        
+
     );
 };
 

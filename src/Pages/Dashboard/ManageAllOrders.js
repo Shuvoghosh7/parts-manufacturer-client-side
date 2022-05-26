@@ -7,7 +7,7 @@ import ManageAllOrdersRow from './ManageAllOrdersRow';
 
 const ManageAllOrders = () => {
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/get-order', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://agile-eyrie-75679.herokuapp.com/get-order', {
         method: "GET",
         headers: {
             'content-type': 'application/json',

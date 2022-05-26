@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ManageAllOrdersRow = ({ product, index }) => {
+const ManageProductsRow = ({ product, index }) => {
     const { _id, picture, pname, available_quantity, price_per_unit } = product
 
     const handealDelete = (deletId) => {
@@ -51,4 +51,4 @@ const ManageAllOrdersRow = ({ product, index }) => {
     );
 };
 
-export default ManageAllOrdersRow;
+export default ManageProductsRow;

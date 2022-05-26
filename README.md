@@ -6,7 +6,7 @@
  https://github.com/programming-hero-web-course1/manufacturer-website-server-side-Shuvoghosh7
 
 #  live website link:
-  
+  https://computer-parts-manufactu-ed97b.web.app/
 # Admin Email & Password:
   Email:shuvogosh111@gmail.com
   Password:123456

@@ -13,7 +13,7 @@ const ManageProductsRow = ({ product, index }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                window.location.reload(false);
+                
             })
 
 

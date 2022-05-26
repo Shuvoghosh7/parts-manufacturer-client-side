@@ -21,6 +21,8 @@ const Purchase = () => {
 
 
     const onSubmit = (data) => {
+        console.log(data)
+        
         fetch("https://agile-eyrie-75679.herokuapp.com/add-orders", {
             method: "POST",
             headers: {

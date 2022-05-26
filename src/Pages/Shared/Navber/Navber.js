@@ -34,6 +34,7 @@ const Navber = ({ children }) => {
 
                             <li><NavLink to='/' className='rounded-lg'>Home</NavLink></li>
                             <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li>
+                            <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li>
                             
                             {user&&<li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>}
                            

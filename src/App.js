@@ -23,6 +23,7 @@ import RequireAdmin from './Pages/Authentication/RequireAdmin/RequireAdmin';
 import Payment from './Pages/Dashboard/Payment';
 import WellcomeDashboard from './Pages/Dashboard/WellcomeDashboard';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import Blogs from './Pages/Blogs/Blogs';
 
 
 
@@ -55,6 +56,7 @@ function App() {
         <Route path='manageProducts' element={<RequireAdmin><ManageProducts/></RequireAdmin>} />
         </Route>
         <Route path='/myPortfolio' element={<MyPortfolio/>}/>
+        <Route path='/blogs' element={<Blogs/>}/>
         <Route path='*' element={<Notfound/>}/>
       </Routes>
       <Footer/>

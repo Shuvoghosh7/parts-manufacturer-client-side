@@ -1,10 +1,15 @@
 # Computer Parts Manufacturer
-# Client-side code Github repository LinK:
 
+# Client-side code Github repository LinK:
+  https://github.com/programming-hero-web-course1/manufacturer-website-client-side-Shuvoghosh7
 # server-side code Github repository LinK:
  https://github.com/programming-hero-web-course1/manufacturer-website-server-side-Shuvoghosh7
-# Admin Email & Password:
 
+#  live website link:
+  
+# Admin Email & Password:
+  Email:shuvogosh111@gmail.com
+  Password:123456
 ## Features and Functionality:
 * This project have  navbar, banner, Parts section,Business Summary,Most order countries are section,Upcoming Products section,Reviews and a footer.
 

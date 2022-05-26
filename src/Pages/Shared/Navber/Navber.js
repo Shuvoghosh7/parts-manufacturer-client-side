@@ -33,7 +33,10 @@ const Navber = ({ children }) => {
                         <ul class="menu menu-horizontal gap-x-2">
 
                             <li><NavLink to='/' className='rounded-lg'>Home</NavLink></li>
-                            <li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>
+                            <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li>
+                            
+                            {user&&<li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>}
+                           
                             <li>{user ? <button className='btn btn-primary uppercase text-white bg-gradient-to-r from-secondary to-primary rounded-lg' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
                             {
                                 user && <li>

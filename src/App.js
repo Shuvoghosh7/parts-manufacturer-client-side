@@ -22,6 +22,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import RequireAdmin from './Pages/Authentication/RequireAdmin/RequireAdmin';
 import Payment from './Pages/Dashboard/Payment';
 import WellcomeDashboard from './Pages/Dashboard/WellcomeDashboard';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 
 
 
@@ -53,6 +54,7 @@ function App() {
         <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin/></RequireAdmin>} />
         <Route path='manageProducts' element={<RequireAdmin><ManageProducts/></RequireAdmin>} />
         </Route>
+        <Route path='/myPortfolio' element={<MyPortfolio/>}/>
         <Route path='*' element={<Notfound/>}/>
       </Routes>
       <Footer/>

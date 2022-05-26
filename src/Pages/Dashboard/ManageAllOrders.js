@@ -1,11 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading/Loading';
+import ManageAllOrdersRow from './ManageAllOrdersRow';
+
 
 
 const ManageAllOrders = () => {
-    
+
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/get-order', {
+        method: "GET",
+        headers: {
+            'content-type': 'application/json',
+            'authorization': `Bearer ${localStorage.getItem('AccessToken')}`
+        }
+    })
+        .then(res => res.json()))
+    if (isLoading) {
+        return <Loading />
+    }
+
     return (
-        <h1>Manage all product</h1>
+        <div class="overflow-x-auto">
+            <table class="table w-full">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Customer Name</th>
+                        <th>Customer Email</th>
+                        <th>Product Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        orders.map((order, index) => <ManageAllOrdersRow
+                            key={order._id}
+                            order={order}
+                            index={index}
+                        />)
+                    }
+                </tbody>
+            </table>
+        </div>
     );
 };
 

@@ -29,16 +29,16 @@ const Footer = () => {
                             Products
                         </h6>
                         <p class="mb-4">
-                            <a href="#!" class="text-gray-600">Angular</a>
+                            <a href="#!" class="text-gray-600">Gaming-Case</a>
                         </p>
                         <p class="mb-4">
-                            <a href="#!" class="text-gray-600">React</a>
+                            <a href="#!" class="text-gray-600">Motherboard</a>
                         </p>
                         <p class="mb-4">
-                            <a href="#!" class="text-gray-600">Vue</a>
+                            <a href="#!" class="text-gray-600">RAM</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-gray-600">Laravel</a>
+                            <a href="#!" class="text-gray-600">Power Supplies</a>
                         </p>
                     </div>
                     <div class="">

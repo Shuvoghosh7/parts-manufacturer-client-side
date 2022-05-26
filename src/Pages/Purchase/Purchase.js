@@ -8,7 +8,6 @@ import auth from '../Firebase/Firebase.init';
 const Purchase = () => {
     const { purchaseId } = useParams()
     const [parts, setParts] = useState([])
-    console.log(parts)
     const [user, loading] = useAuthState(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     useEffect(() => {
@@ -21,8 +20,6 @@ const Purchase = () => {
 
 
     const onSubmit = (data) => {
-        console.log(data)
-        
         fetch("https://agile-eyrie-75679.herokuapp.com/add-orders", {
             method: "POST",
             headers: {
@@ -48,11 +45,15 @@ const Purchase = () => {
                         <p class="py-2"><span className='text-success font-bold text-lg'>Available Quantity:</span> {parts.available_quantity}</p>
                         <p class="py-6"><span className='text-success font-bold text-lg'>price per unit:</span>{parts.price_per_unit}</p>
                     </div>
+                    
                 </div>
+                
             </div>
+            <p className='text-2xl text-center'>Hear I use react hook form but not work properly.Please click every inport field before order other wise not send all data in database</p>
             <div className='flex h-screen justify-center items-center my-12'>
                 <div class="card w-96 bg-info shadow-xl">
                     <div class="card-body items-center text-center">
+                   
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
@@ -127,7 +128,7 @@ const Purchase = () => {
                                     defaultValue={parts.minimum_order_quantity}
 
                                     className="input input-bordered w-full max-w-xs"
-                                    {...register("quantity")}
+                                    {...register("quantity")}   
                                 />
 
                             </div>

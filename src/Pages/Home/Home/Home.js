@@ -15,7 +15,7 @@ const Home = () => {
             <Tools/>
             <BusinessSummary/>
             <MostOrderCountries/>
-            <UpcomingProducts/>
+            
             <Reviews/>
             
         </div>

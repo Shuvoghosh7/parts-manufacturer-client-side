@@ -6,7 +6,7 @@ import MostOrderCountries from './MostOrderCountries';
 
 import Reviews from './Reviews';
 import Tools from './Tools';
-import UpcomingProducts from './UpcomingProducts/UpcomingProducts';
+
 
 const Home = () => {
     return (

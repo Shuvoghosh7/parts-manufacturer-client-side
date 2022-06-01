@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../Firebase/Firebase.init';
-
+import '../../Pages/Style/Purchase.css'
 const Purchase = () => {
     const { purchaseId } = useParams()
     const [parts, setParts] = useState([])
@@ -18,14 +18,20 @@ const Purchase = () => {
     }, [])
 
 
-
+   
     const onSubmit = (data) => {
+        const info={
+             ...data,
+             email:user?.email,
+             pname:parts.pname,
+             price_per_unit:parts.price_per_unit
+        }
         fetch("https://agile-eyrie-75679.herokuapp.com/add-orders", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(info)
         })
             .then(res => res.json())
             .then(data => {
@@ -45,114 +51,47 @@ const Purchase = () => {
                         <p class="py-2"><span className='text-success font-bold text-lg'>Available Quantity:</span> {parts.available_quantity}</p>
                         <p class="py-6"><span className='text-success font-bold text-lg'>price per unit:</span>{parts.price_per_unit}</p>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
-            <p className='text-2xl text-center'>Hear I use react hook form but not work properly.Please click every inport field before order other wise not send all data in database</p>
-            <div className='flex h-screen justify-center items-center my-12'>
-                <div class="card w-96 bg-info shadow-xl">
-                    <div class="card-body items-center text-center">
-                   
+
+            <div className='login-container'> 
+                    <p className='login-title'>Confirm Your Order</p>
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Name</span>
-                                </label>
-                                <input
-                                    type="name"
-                                    value={user?.displayName}
-                                    readOnly
-                                    className="input input-bordered w-full max-w-xs"
-                                    {...register("name")}
-                                />
 
-                            </div>
-                            <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input
-                                    type="Email"
-                                    value={user?.email}
-                                    readOnly
-                                    className="input input-bordered w-full max-w-xs"
-                                    {...register("email")}
-                                />
-
-                            </div>
-                            <div className="form-control w-full max-w-xs">
+                            <div className='input-field'>
                                 <label className="label">
                                     <span className="label-text">Address</span>
                                 </label>
-                                <input
-                                    type="text"
-                                    placeholder="Your Address"
-                                    className="input input-bordered w-full max-w-xs"
-                                    {...register("address")}
-                                />
-
+                                <input type="text"
+                                placeholder="Write Your Address" {...register("address")} />
                             </div>
-                            <div className="form-control w-full max-w-xs">
+                            <div className='input-field'>
                                 <label className="label">
                                     <span className="label-text">Number</span>
                                 </label>
-                                <input
-                                    type="text"
-                                    placeholder="Your Number"
-                                    className="input input-bordered w-full max-w-xs"
-                                    {...register("number")}
-                                />
-
+                                <input type="text"
+                                placeholder="Write Your Number"
+                                {...register("number")} />
                             </div>
-                            <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Product Name</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    defaultValue={parts.pname}
-                                    className="input input-bordered w-full max-w-xs"
-                                    {...register("pname")}
-                                />
-
-                            </div>
-
-                            <div className="form-control w-full max-w-xs">
+                            <div className='input-field'>
                                 <label className="label">
                                     <span className="label-text">Quantity</span>
                                 </label>
-                                <input
-                                    type="number"
-                                    min={parts.minimum_order_quantity} max={parts.available_quantity}
-                                    defaultValue={parts.minimum_order_quantity}
-
-                                    className="input input-bordered w-full max-w-xs"
-                                    {...register("quantity")}   
-                                />
-
-                            </div>
-                            <div className="form-control w-full max-w-xs">
-                                <label className="label">
-                                    <span className="label-text">Price</span>
-                                </label>
-                                <input
-                                    type="number"
-                                    defaultValue={parts.price_per_unit}
-                                   
-                                    className="input input-bordered w-full max-w-xs"
-                                    {...register("price_per_unit")}
-                                />
-
+                                <input type="Number"
+                                min={parts.minimum_order_quantity} max={parts.available_quantity}
+                                defaultValue={parts.minimum_order_quantity}
+                                {...register("quantity")} />
                             </div>
 
-                            <input className='btn w-full max-w-xs mt-5' type="submit" value="complete the purchase" />
 
 
+                            <input className='submit-button' type="submit" value="complete the purchase" />
                         </form>
 
-                    </div>
-                </div>
+                    
+                
             </div>
         </div>
     );

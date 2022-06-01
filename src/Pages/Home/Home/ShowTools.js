@@ -16,12 +16,12 @@ const ShowTools = ({ part }) => {
                 <figure><img src={picture} alt="Shoes" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">{pname}</h2>
-                    <p>{description}</p>
-                    <p><span className='font-bold'>minimumQuantity:</span>{minimum_order_quantity}</p>
-                    <p><span className='font-bold'>available_quantity:</span>{available_quantity}</p>
-                    <p><span className='font-bold'>price_per_unit:</span>{price_per_unit}</p>
+                    {/* <p>{description}</p> */}
+                    {/* <p><span className='font-bold'>minimumQuantity:</span>{minimum_order_quantity}</p> */}
+                    <p><span className='font-bold'>Available_quantity:</span>{available_quantity}</p>
+                    <p><span className='font-bold'>price_per_unit:</span> ${price_per_unit}</p>
                     <div class="card-actions justify-end">
-                        <button class="btn btn-primary" onClick={()=>purchaseDetails(_id)}>Order Now</button>
+                        <button class="btn btn-primary bg-gradient-to-r from-secondary to-primary" onClick={()=>purchaseDetails(_id)}>Order Now</button>
                     </div>
                 </div>
             </div>

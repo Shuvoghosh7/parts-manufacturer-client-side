@@ -11,9 +11,6 @@ import Tools from './Tools';
 const Home = () => {
     return (
         <div>
-            <h1>sss</h1>
-            <h2>KKKKK</h2>
-            <h2>KKKKK</h2>
             <Banner/>
             <Tools/>
             <BusinessSummary/>

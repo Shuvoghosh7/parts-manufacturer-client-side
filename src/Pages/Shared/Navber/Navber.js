@@ -6,6 +6,7 @@ import auth from '../../Firebase/Firebase.init';
 
 const Navber = ({ children }) => {
     const [user, loading] = useAuthState(auth);
+    console.log(user)
     const { pathname } = useLocation()
     const logout = () => {
         signOut(auth);
@@ -29,23 +30,17 @@ const Navber = ({ children }) => {
                         </label>
                     </div>
 
-                    <div class="flex-none hidden lg:block">
+                    <div class="flex-none hidden lg:block ">
                         <ul class="menu menu-horizontal gap-x-2">
 
-                            <li><NavLink to='/' className='rounded-lg'>Home</NavLink></li>
-                            <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li>
-                            <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li>
+                            <li><NavLink to='/' className='rounded-lg '>Home</NavLink></li>
+                            {/* <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li> */}
+                            {/* <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li> */}
 
                             {user && <li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>}
 
-                            <li>{user ? <button className='btn btn-primary uppercase text-white bg-gradient-to-r from-secondary to-primary rounded-lg' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
-                            {
-                                user && <li>
-                                    <p className=' btn-primary uppercase  bg-gradient-to-r from-primary to-secondary rounded-lg'>
-                                        {user.displayName}
-                                    </p>
-                                </li>
-                            }
+                            <li>{user ? <button className='btn  uppercase text-white  rounded-lg' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
+                            
 
                         </ul>
                     </div>
@@ -63,7 +58,7 @@ const Navber = ({ children }) => {
 
                     {user && <li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>}
                     <li>{user ? <button className='btn btn-primary uppercase text-white bg-gradient-to-r from-secondary to-primary rounded-lg' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
-                    
+
 
                 </ul>
 

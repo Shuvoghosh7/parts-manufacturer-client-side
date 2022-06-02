@@ -6,7 +6,7 @@ import { BsTools  } from 'react-icons/bs';
 const BusinessSummary = () => {
     return (
         <div className='my-16'>
-            <h1 className='text-xl font-bold my-6'>Business Summary</h1>
+            <h1 className='text-xl font-bold text-center my-12 text-success'>Business Summary:</h1>
             <div className='grid grid-cols-2  md:grid-cols-2 lg:grid-cols-4 gap-8'>
                 <div className='mx-16'>
                     <IoIosPeople className='text-5xl text-primary' />

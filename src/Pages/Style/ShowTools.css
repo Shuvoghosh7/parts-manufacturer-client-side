@@ -1,0 +1,8 @@
+.card-img:hover img{
+    transform: scale(1.4) ;
+    transition: transform 1s ease-in ;
+}
+.card-button:hover{
+    transform: scale(1.2) ;
+    transition: transform 1s ease-in ;
+}

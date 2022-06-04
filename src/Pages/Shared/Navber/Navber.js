@@ -34,6 +34,7 @@ const Navber = ({ children }) => {
                         <ul class="menu menu-horizontal gap-x-2">
 
                             <li><NavLink to='/' className='rounded-lg '>Home</NavLink></li>
+                            <li><NavLink to='/products' className='rounded-lg '>Products</NavLink></li>
                             {/* <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li> */}
                             {/* <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li> */}
 

@@ -27,6 +27,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import Products from './Pages/Home/Home/Products/Products';
 
 
 function App() {
@@ -38,6 +39,8 @@ function App() {
       <Navber>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/products' element={<Products/>}/>
+
         <Route path='/purchase/:purchaseId' element={
           <RequireAuth>
             <Purchase/>

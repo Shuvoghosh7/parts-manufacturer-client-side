@@ -1,8 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../Style/ShowTools.css'
 
-const ShowTools = ({ part }) => {
+const Allproducts = ({ part }) => {
     const { _id, picture, pname, description, minimum_order_quantity, available_quantity, price_per_unit
     } = part
 
@@ -11,7 +10,7 @@ const ShowTools = ({ part }) => {
         navigate(`/purchase/${DetailsId}`)
     }
     return (
-            <div>
+        <div>
                 <div class="card w-96 bg-base-100 drop-shadow-2xl">
                     <figure>
                         <div className='card-img'>
@@ -31,9 +30,7 @@ const ShowTools = ({ part }) => {
                 </div>
 
             </div>
-       
-
     );
 };
 
-export default ShowTools;
+export default Allproducts;

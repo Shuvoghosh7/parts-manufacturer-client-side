@@ -27,7 +27,7 @@ const DashboardSideber = ({ children }) => {
                    
                     
                     {admin &&<>
-                        <li><NavLink to="/dashboard/manageOrders">Manage All Orders</NavLink></li>
+                        {/* <li><NavLink to="/dashboard/manageOrders">Manage All Orders</NavLink></li> */}
                         <li><NavLink to="/dashboard/AddProduct">Add Product</NavLink></li>
                         <li><NavLink to="/dashboard/makeAdmin">Make Admin</NavLink></li>
                         <li><NavLink to="/dashboard/manageProducts">Manage Products</NavLink></li>

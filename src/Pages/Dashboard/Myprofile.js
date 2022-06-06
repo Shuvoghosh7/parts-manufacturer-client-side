@@ -32,7 +32,6 @@ const Myprofile = () => {
         reset()
     }
     const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://agile-eyrie-75679.herokuapp.com/get-profile?email=${user.email}`).then(res => res.json()))
-    console.log(profile)
     if (isLoading) {
         return <Loading />
     }
@@ -49,7 +48,7 @@ const Myprofile = () => {
                             info={info}
                         ></Profileinfo>)
                     }
-
+                    
                 </div>
             </div>
             <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
@@ -104,7 +103,7 @@ const Myprofile = () => {
                     </form>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

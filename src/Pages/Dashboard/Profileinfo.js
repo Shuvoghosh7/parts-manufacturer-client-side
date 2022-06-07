@@ -7,7 +7,7 @@ const Profileinfo = ({ info }) => {
     const { education, location, phoneNumber, LinkedInLink,_id } = info
     const [user] = useAuthState(auth)
     const updateProfile=(event)=>{
-       
+        event.preventDefault();
         const education=event.target.education.value
         const location=event.target.location.value
         const phoneNumber=event.target.phoneNumber.value
@@ -26,6 +26,7 @@ const Profileinfo = ({ info }) => {
                    
                     console.log(data)
                     toast("Your Profile update successfully")
+                    window.location.reload(false);
                 })
 
     }

@@ -13,7 +13,7 @@ const Profileinfo = ({ info }) => {
         const phoneNumber=event.target.phoneNumber.value
         const LinkedInLink=event.target.LinkedInLink.value
         
-        fetch(`http://localhost:5000/update-profile/${_id}`, {
+        fetch(`https://agile-eyrie-75679.herokuapp.com/update-profile/${_id}`, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json',
@@ -25,7 +25,7 @@ const Profileinfo = ({ info }) => {
                 .then(data => {
                    
                     console.log(data)
-                    toast("product update successfully")
+                    toast("Your Profile update successfully")
                 })
 
     }

@@ -42,7 +42,7 @@ const Purchase = () => {
             })
     }
     return (
-        <div className='bg-[#D8D8D8]'>
+        <div className='bg-red-400'>
             <div class="hero  bg-[#EEEEEE]">
                 <div class="hero-content flex-col lg:flex-row">
                       <img className='w-96 mr-12 mt-12' src={parts.picture} />

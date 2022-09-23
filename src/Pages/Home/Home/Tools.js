@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../Shared/Loading/Loading';
 import ShowTools from './ShowTools';
 
 const Tools = () => {
@@ -9,6 +10,9 @@ const Tools = () => {
     const navigate = useNavigate()
     const Allproduct= () => {
         navigate('/products')
+    }
+    if(isLoading){
+        <Loading/>
     }
     return (
         <div className='bg-accent'>

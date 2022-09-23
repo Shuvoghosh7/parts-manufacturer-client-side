@@ -3,12 +3,17 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import useAdmin from '../../Hooks/useAdmin';
 import auth from '../Firebase/Firebase.init';
+import { BsFillPersonFill } from 'react-icons/bs';
+import { GrProductHunt } from 'react-icons/gr';
+import { RiAdminFill } from 'react-icons/ri';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { MdReviews } from 'react-icons/md';
 
 const DashboardSideber = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     const [admin] = useAdmin(user)
     return (
-        <div class="drawer drawer-mobile bg-accent">
+        <div class="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle"/>
             <div class="drawer-content ">
                 {/*  <!-- Page content here --> */}
@@ -16,21 +21,21 @@ const DashboardSideber = ({ children }) => {
             </div>
             <div class="drawer-side">
                 <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content">
+                <ul class="menu p-4 overflow-y-auto w-72 bg-[#5433FF]  text-white">
                     {/*   Sidebar content here */}
                     <li></li>
                     {(!admin) && <>
-                        <li><Link to="/dashboard/myorder">My order</Link></li>
-                        <li><Link to="/dashboard/review">Add A Review</Link></li>
+                        <li className='text-xl font-bold'><Link to="/dashboard/myorder"><AiOutlineShoppingCart/> My order</Link></li>
+                        <li className='text-xl font-bold'><Link to="/dashboard/review"><MdReviews/> Add A Review</Link></li>
                     </>}
-                    <li><NavLink to="/dashboard/myprofile">My Profile</NavLink></li>
+                    <li className='text-xl font-bold'><NavLink to="/dashboard/myprofile"><BsFillPersonFill/>My Profile</NavLink></li>
                    
                     
                     {admin &&<>
-                        {/* <li><NavLink to="/dashboard/manageOrders">Manage All Orders</NavLink></li> */}
-                        <li><NavLink to="/dashboard/AddProduct">Add Product</NavLink></li>
-                        <li><NavLink to="/dashboard/makeAdmin">Make Admin</NavLink></li>
-                        <li><NavLink to="/dashboard/manageProducts">Manage Products</NavLink></li>
+                        {/* <li className='text-xl font-bold'><NavLink to="/dashboard/manageOrders">Manage All Orders</NavLink></li> */}
+                        <li className='text-xl font-bold' ><NavLink to="/dashboard/AddProduct"><GrProductHunt/> Add Product</NavLink></li>
+                        <li className='text-xl font-bold'><NavLink to="/dashboard/makeAdmin"><RiAdminFill/> Make Admin</NavLink></li>
+                        <li className='text-xl font-bold'><NavLink to="/dashboard/manageProducts"> <GrProductHunt/>Manage Products</NavLink></li>
                     </>}
 
                 </ul>

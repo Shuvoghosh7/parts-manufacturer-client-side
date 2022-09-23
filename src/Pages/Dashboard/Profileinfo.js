@@ -32,13 +32,13 @@ const Profileinfo = ({ info }) => {
     }
     return (
         <div>
-            <p ><span className='font-bold'>Education</span>{education}</p>
-            <p ><span className='font-bold'>Location</span>{location}</p>
-            <p ><span className='font-bold'>Phone Number</span>{phoneNumber}</p>
-            <p ><span className='font-bold'>LinkedIn Link</span>{LinkedInLink} </p>
+            <p><span className='font-bold text-[#FD841F]'>Education: </span>{education}</p>
+            <p className='mt-3' ><span className='font-bold text-[#FD841F]'>Location: </span>{location}</p>
+            <p className='mt-3'><span className='font-bold text-[#FD841F]'>Phone Number: </span>{phoneNumber}</p>
+            <p className='mt-3'><span className='font-bold text-[#FD841F]'>LinkedIn Link: </span>{LinkedInLink} </p>
             <div>
             <div>
-                        <label for="my-modal-3" class="btn modal-button bg-transparent hover:bg-gradient-to-r from-secondary to-primary btn-primary card-button mt-6">Update Profile</label>
+                        <label for="my-modal-3" class="btn modal-button bg-transparent hover:bg-gradient-to-r from-secondary to-primary btn-primary card-button mt-24 text-white">Update Profile</label>
                         <input type="checkbox" id="my-modal-3" class="modal-toggle" />
                         <div class="modal mt-12">
                             <div class="modal-box relative">

@@ -13,11 +13,12 @@ const MakeAdmin = () => {
         }
     })
         .then(res => res.json()))
+    console.log(users)
     if (isLoading) {
         return <Loading />
     }
     return (
-        <div>
+        <div className='mx-5 my-5'>
             <h2 className='text-2xl'>All User:{users.length}</h2>
             <div class="overflow-x-auto">
                 <table class="table w-full">
@@ -31,9 +32,10 @@ const MakeAdmin = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map(user => <MakeAdminRow
+                            users?.map((user,index) => <MakeAdminRow
                                 key={user._id}
                                 user={user}
+                                index={index}
                                 refetch={refetch}
                             ></MakeAdminRow>)
                         }

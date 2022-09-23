@@ -36,27 +36,29 @@ const Myprofile = () => {
         return <Loading />
     }
     return (
-        <div className='lg:flex justify-around'>
-            <div>
-                <p ><span className='font-bold'>Name:</span>{user?.displayName}</p>
-                <p ><span className='font-bold'>Email:</span>{user?.email}</p>
-                <div>
+        <div className='lg:flex justify-around my-12'>
+            <div className='bg-[#25316D] text-white mt-12'>
+                <div className='mx-8 my-12 text-xl'>
+                    <p><span className='font-bold text-[#FD841F]'>Name: </span>{user?.displayName}</p>
+                    <p className='mt-3'><span className='font-bold text-[#FD841F]'>Email: </span>{user?.email}</p>
+                    <div className='mt-3'>
 
-                    {
-                        profile.map(info => <Profileinfo
-                            key={info._id}
-                            info={info}
-                        ></Profileinfo>)
-                    }
-                    
+                        {
+                            profile.map(info => <Profileinfo
+                                key={info._id}
+                                info={info}
+                            ></Profileinfo>)
+                        }
+
+                    </div>
                 </div>
             </div>
-            <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'>
+            <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-[#97D2EC]'>
                 <div class="card-body">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Education</span>
+                                <span className="label-text text-xl font-bold">Education</span>
                             </label>
                             <input
                                 type="text"
@@ -68,7 +70,7 @@ const Myprofile = () => {
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">Location</span>
+                                <span className="label-text text-xl font-bold">Location</span>
                             </label>
                             <textarea
                                 type="name"
@@ -79,7 +81,7 @@ const Myprofile = () => {
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">phnoe number</span>
+                                <span className="label-text text-xl font-bold">phnoe number</span>
                             </label>
                             <input
                                 type="text"
@@ -90,7 +92,7 @@ const Myprofile = () => {
                         </div>
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
-                                <span className="label-text">LinkedIn profile link</span>
+                                <span className="label-text text-xl font-bold">LinkedIn profile link</span>
                             </label>
                             <input
                                 type="text"
@@ -99,7 +101,7 @@ const Myprofile = () => {
                             />
 
                         </div>
-                        <input className='btn w-full max-w-xs mt-5' type="submit" value="Add Profile Info" />
+                        <input className='btn w-full max-w-xs mt-5 bg-[#5433FF] text-white text-xl' type="submit" value="Add Profile Info" />
                     </form>
                 </div>
             </div>

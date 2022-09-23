@@ -9,7 +9,7 @@ const DashboardSideber = ({ children }) => {
     const [admin] = useAdmin(user)
     return (
         <div class="drawer drawer-mobile bg-accent">
-            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+            <input id="my-drawer-2" type="checkbox" class="drawer-toggle"/>
             <div class="drawer-content ">
                 {/*  <!-- Page content here --> */}
                 {children}

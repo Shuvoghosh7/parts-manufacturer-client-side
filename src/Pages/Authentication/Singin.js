@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
+
 import { BsFacebook } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import {  useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../Firebase/Firebase.init';
 import Loading from '../Shared/Loading/Loading';
 import useToken from '../../Hooks/useToken';
+import { toast } from 'react-toastify';
 
 
 
@@ -19,27 +21,28 @@ const Singin = () => {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
-    const[token]=useToken(user||googleuser)
+    ] = useSignInWithEmailAndPassword(auth);
+    const [token] = useToken(user || googleuser)
     let singInError;
-    if(error || googleError){
-        singInError= <p className='text-red-500'>{error?.message || googleError?.message}</p>
-      }
-      
-     
-      let navigate = useNavigate();
-      let location = useLocation();
-      let from = location.state?.from?.pathname || "/";
-      useEffect( () =>{
+    if (error || googleError) {
+        singInError = <p className='text-red-500'>{error?.message || googleError?.message}</p>
+    }
+
+
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    useEffect(() => {
         if (token) {
             navigate(from, { replace: true });
         }
-    }, [token,from, navigate])
+    }, [token, from, navigate])
 
     if (loading || googleloading) {
-        return <Loading/>
+        return <Loading />
     }
-      const onSubmit=(data)=>{
+
+    const onSubmit = (data) => {
         signInWithEmailAndPassword(data.email, data.password);
     }
     return (
@@ -53,24 +56,24 @@ const Singin = () => {
                                 <span className="label-text">Email</span>
                             </label>
                             <input
-                             type="Email" 
-                             placeholder="Your Email" 
-                             className="input input-bordered w-full max-w-xs" 
-                             {...register("email", {
-                                required:{
-                                    value:true,
-                                    message:"Email is required"
-                                },
-                                pattern: {
-                                  value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                  message: 'provide a valid email'
-                                }
-                              })}
-                             />
+                                type="Email"
+                                placeholder="Your Email"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: "Email is required"
+                                    },
+                                    pattern: {
+                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                        message: 'provide a valid email'
+                                    }
+                                })}
+                            />
                             <label className="label">
-                            {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                            {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                                
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+
                             </label>
                         </div>
                         <div className="form-control w-full max-w-xs">
@@ -78,35 +81,35 @@ const Singin = () => {
                                 <span className="label-text">password</span>
                             </label>
                             <input
-                             type="password" 
-                             placeholder="Your password" 
-                             className="input input-bordered w-full max-w-xs" 
-                             {...register("password", {
-                                required:{
-                                    value:true,
-                                    message:"password is required"
+                                type="password"
+                                placeholder="Your password"
+                                className="input input-bordered w-full max-w-xs"
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: "password is required"
 
-                                },
-                                minLength: {
-                                  value: 6,
-                                  message: 'must 6 character or longer'
-                                }
-                              })}
-                             />
+                                    },
+                                    minLength: {
+                                        value: 6,
+                                        message: 'must 6 character or longer'
+                                    }
+                                })}
+                            />
                             <label className="label">
-                            {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-                            {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-                                
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+
                             </label>
                         </div>
                         {singInError}
-                        <input className='btn w-full max-w-xs' type="submit" value="Login"/>
+                        <input className='btn w-full max-w-xs' type="submit" value="Login" />
                     </form>
                     <p>New to Doctors Portal? <Link className='text-secondary' to="/singup">Create new account</Link></p>
 
                     <div className="divider">OR</div>
                     <div className="flex justify-between">
-                        <button className='btn btn-primary btn-outline'  onClick={() => signInWithGoogle()}><FcGoogle className='text-2xl mr-2' />  Google</button>
+                        <button className='btn btn-primary btn-outline' onClick={() => signInWithGoogle()}><FcGoogle className='text-2xl mr-2' />  Google</button>
                         <button className='btn btn-primary btn-outline'><BsFacebook className='text-2xl mr-2' /> Facebook</button>
                     </div>
                 </div>

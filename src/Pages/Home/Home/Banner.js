@@ -1,6 +1,6 @@
 import React from 'react';
 import img from '../../../images/computer-parts-from-china.jpg'
-import { Carousel } from 'react-responsive-carousel';
+
 const Banner = () => {
     return (
         <div class="hero  bg-base-100 lg:my-12">

@@ -3,11 +3,12 @@ import React from 'react';
 const ShowReview = ({ review }) => {
     const { ratings, description } = review
     return (
-        <div class="card w-[300px] bg-base-100 shadow-xl image-full lg:mx-16">
-            <figure><img className='w-full' src="https://i.ibb.co/5ckpTrF/images.jpg" alt="Shoes" /></figure>
+
+        <div className="card w-[400px] bg-[#674747] shadow-xl image-full lg:mx-16">
             <div class="card-body">
-                <h2 class="card-title font-bold">Rataing:{ratings} out of 5  </h2>
-                <p className='font-bold'>{description}</p>
+                <h2 class="card-title font-bold ">Rataing:{ratings} out of 5  </h2>
+                <p className='text-lg text-justify text-white'>{description}</p>
+                
             </div>
         </div>
     );

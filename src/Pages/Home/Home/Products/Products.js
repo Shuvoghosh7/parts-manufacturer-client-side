@@ -1,9 +1,14 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import Loading from '../../../Shared/Loading/Loading';
 import Allproducts from './Allproducts';
 
 const Products = () => {
     const { data: parts, isLoading } = useQuery('parts', () => fetch('https://agile-eyrie-75679.herokuapp.com/get-parts').then(res => res.json()))
+   
+    if (isLoading) {
+        return <Loading />
+    }
     return (
         <div>
            

@@ -21,7 +21,7 @@ const Tools = () => {
                     />)
                 }
             </div>
-            <div className='text-center my-12'>
+            <div className='text-center my-12 pb-5'>
                 <button className='btn bg-transparent hover:bg-gradient-to-r from-secondary to-primary btn-primary card-button ' onClick={Allproduct}>See More</button>
             </div>
         </div>

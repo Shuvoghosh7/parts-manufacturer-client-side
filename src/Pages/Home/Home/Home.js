@@ -15,7 +15,7 @@ const Home = () => {
             <Tools/>
             <BusinessSummary/> 
             <Reviews/>
-            
+
         </div>
     );
 };

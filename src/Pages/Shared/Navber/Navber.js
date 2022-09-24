@@ -17,7 +17,7 @@ const Navber = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
 
-                <div class="w-full navbar bg-neutral  z-50 lg:px-20">
+                <div class="w-full navbar bg-[#937DC2]  z-50 lg:px-20">
                     {pathname.includes('dashboard') && <label for="my-drawer-2" class="btn btn-ghost btn-circle drawer-button lg:hidden">
 
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
@@ -40,7 +40,7 @@ const Navber = ({ children }) => {
 
                             {user && <li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>}
 
-                            <li>{user ? <button className='btn  uppercase text-white  rounded-lg' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
+                            <li>{user ? <button className='btn  uppercase text-white bg-transparent  rounded-lg border-0' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
                             
 
                         </ul>

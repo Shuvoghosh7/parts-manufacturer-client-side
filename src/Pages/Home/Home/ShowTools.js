@@ -12,7 +12,7 @@ const ShowTools = ({ part }) => {
     }
     return (
         <div>
-            <div class="card lg:w-[450px] bg-base-100 drop-shadow-2xl">
+            <div class="card lg:w-[410px] bg-base-100 drop-shadow-2xl">
                 <figure>
                     <div class="avatar mt-5 card-img">
                         <div class="w-52 rounded-full border-4 border-indigo-600 p-8">

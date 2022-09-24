@@ -32,7 +32,7 @@ const DashboardSideber = ({ children }) => {
                    
                     
                     {admin &&<>
-                        {/* <li className='text-xl font-bold'><NavLink to="/dashboard/manageOrders">Manage All Orders</NavLink></li> */}
+                        <li className='text-xl font-bold'><NavLink to="/dashboard/manageOrders"><AiOutlineShoppingCart/> All Orders</NavLink></li>
                         <li className='text-xl font-bold' ><NavLink to="/dashboard/AddProduct"><GrProductHunt/> Add Product</NavLink></li>
                         <li className='text-xl font-bold'><NavLink to="/dashboard/makeAdmin"><RiAdminFill/> Make Admin</NavLink></li>
                         <li className='text-xl font-bold'><NavLink to="/dashboard/manageProducts"> <GrProductHunt/>Manage Products</NavLink></li>

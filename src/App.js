@@ -58,7 +58,7 @@ function App() {
         <Route path='/dashboard' element={<WellcomeDashboard/>} />
         <Route path='myprofile' element={<Myprofile/>} />
         <Route path='payment/:id' element={<Payment/>} />
-        {/* <Route path='manageOrders' element={<RequireAdmin><ManageAllOrders/></RequireAdmin>} /> */}
+        <Route path='manageOrders' element={<RequireAdmin><ManageAllOrders/></RequireAdmin>} />
         <Route path='AddProduct' element={<RequireAdmin><AddProduct/></RequireAdmin>} />
         <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin/></RequireAdmin>} />
         <Route path='manageProducts' element={<RequireAdmin><ManageProducts/></RequireAdmin>} />

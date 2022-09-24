@@ -28,12 +28,12 @@ const ManageAllOrders = () => {
                         <th>Customer Name</th>
                         <th>Customer Email</th>
                         <th>Product Name</th>
-                        <th>Action</th>
+                        <th>TransactionId</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
-                        orders.map((order, index) => <ManageAllOrdersRow
+                        orders?.map((order, index) => <ManageAllOrdersRow
                             key={order._id}
                             order={order}
                             index={index}

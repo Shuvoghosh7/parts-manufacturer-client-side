@@ -27,7 +27,7 @@ const ManageProductsRow = ({ product, index }) => {
             available_quantity,
             price_per_unit
         }
-        fetch(`ttps://agile-eyrie-75679.herokuapp.com/edit-parts/${_id}`, {
+        fetch(`https://agile-eyrie-75679.herokuapp.com/edit-parts/${_id}`, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json',

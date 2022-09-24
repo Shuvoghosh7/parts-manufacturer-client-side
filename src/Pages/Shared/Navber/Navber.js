@@ -33,14 +33,14 @@ const Navber = ({ children }) => {
                     <div class="flex-none hidden lg:block ">
                         <ul class="menu menu-horizontal gap-x-2">
 
-                            <li><NavLink to='/' className='rounded-lg '>Home</NavLink></li>
-                            <li><NavLink to='/products' className='rounded-lg '>Products</NavLink></li>
+                            <li><NavLink to='/' className='rounded-lg text-lg font-bold text-white'>Home</NavLink></li>
+                            <li><NavLink to='/products' className='rounded-lg text-lg font-bold text-white'>Products</NavLink></li>
                             {/* <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li> */}
                             {/* <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li> */}
 
-                            {user && <li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>}
+                            {user && <li><NavLink to='/dashboard' className='rounded-lg text-lg font-bold text-white'>Dashboard</NavLink></li>}
 
-                            <li>{user ? <button className='btn  uppercase text-white bg-transparent  rounded-lg border-0' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
+                            <li>{user ? <button className='btn  uppercase text-white bg-transparent  rounded-lg border-0 text-lg font-bold' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
                             
 
                         </ul>
@@ -53,12 +53,13 @@ const Navber = ({ children }) => {
                 <label for="my-drawer-3" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
 
-                    <li><NavLink to='/' className='rounded-lg'>Home</NavLink></li>
-                    <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li>
-                    <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li>
+                    <li><NavLink to='/' className='rounded-lg text-lg font-bold '>Home</NavLink></li>
+                    <li><NavLink to='/products' className='rounded-lg text-lg font-bold'>Products</NavLink></li>
+                    {/* <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li> */}
+                    {/* <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li> */}
 
-                    {user && <li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>}
-                    <li>{user ? <button className='btn btn-primary uppercase text-white bg-gradient-to-r from-secondary to-primary rounded-lg' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
+                    {user && <li><NavLink to='/dashboard' className='rounded-lg text-lg font-bold'>Dashboard</NavLink></li>}
+                    <li>{user ? <button className='btn btn-primary uppercase text-white bg-gradient-to-r from-secondary to-primary rounded-lg text-lg' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
 
 
                 </ul>

@@ -1,35 +1,126 @@
 import React from 'react';
-import { IoIosPeople } from 'react-icons/io';
-import { HiCurrencyDollar  } from 'react-icons/hi';
-import { MdReviews  } from 'react-icons/md';
-import { BsTools  } from 'react-icons/bs';
+import CountUp from "react-countup";
+import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
+import VisibilitySensor from "react-visibility-sensor";
+import '../../Style/BusinessSummary.css'
+import { FaThumbsUp } from 'react-icons/fa';
+import { FaUsers } from 'react-icons/fa';
+import { FaTruckMoving } from 'react-icons/fa';
+import { FaFlag } from 'react-icons/fa';
 const BusinessSummary = () => {
     return (
-        <div className='my-16'>
-            <h1 className='text-xl font-bold text-center my-12 text-success'>Business Summary:</h1>
-            <div className='grid grid-cols-2  md:grid-cols-2 lg:grid-cols-4 gap-8 lg:ml-32'>
-                <div className='mx-16 my-6'>
-                    <IoIosPeople className='text-5xl text-primary' />
-                    <p className='font-bold text-xl'>100+</p>
-                    <p className='text-primary font-bold text-xl'>customers</p>
+        <section className="summery-banner-content mt-5">
+            <div className="summery-banner py-15 px-5">
+                {/* <h2 className="uppercase mt-10 text-3xl lg:text-5xl text-primary font-extrabold text-center font-poppins">
+          We Delivered Drills All Over The World
+        </h2> */}
+                <SectionTitle><span className='business-title'>We Delivered Drills All Over The World</span></SectionTitle>
+                <div>
+                    <div className="summery-inside-banner">
+                        <div className="grid grid-cols-1 py-10 gap-5 md:grid-cols-2 lg:grid-cols-4">
+                            <div className="lg:mx-10 rounded-2xl p-4 bg-white text-gray-500 hover:text-primary flex flex-col justify-center">
+                                <div className="text-6xl py-5 mb-2 px-[1.45rem] cursor-text mx-auto transition-all duration-300">
+                                    <FaFlag/>
+                                </div>
+                                <div className="text-center">
+                                    <CountUp start={0} end={49} duration={2}>
+                                        {({ countUpRef, start }) => (
+                                            <VisibilitySensor onChange={start} delayedCall>
+                                                <span
+                                                    className="text-4xl my-2 text-primary font-semibold"
+                                                    ref={countUpRef}
+                                                />
+                                            </VisibilitySensor>
+                                        )}
+                                    </CountUp>
+                                    <span className="text-4xl my-2 text-primary font-semibold">
+                                        +
+                                    </span>
+                                    <p className="text-2xl font-semibold my-2 uppercase font-mono">
+                                        TOTAL AWARDS
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="lg:mx-10 rounded-2xl p-4 bg-white text-gray-500 hover:text-primary  flex flex-col justify-center">
+                                <div className="text-6xl py-5 mb-2 px-[1.45rem] cursor-text mx-auto transition-all duration-300">
+                                    <FaTruckMoving/>
+                                </div>
+                                <div className="text-center">
+                                    <CountUp start={0} end={500} duration={2}>
+                                        {({ countUpRef, start }) => (
+                                            <VisibilitySensor onChange={start} delayedCall>
+                                                <span
+                                                    className="text-4xl my-2 text-primary font-semibold"
+                                                    ref={countUpRef}
+                                                />
+                                            </VisibilitySensor>
+                                        )}
+                                    </CountUp>
+                                    <span className="text-4xl my-2 text-primary font-semibold">
+                                        K+
+                                    </span>
+                                    <p className="text-2xl font-semibold my-2 uppercase font-mono">
+                                        TOTAL deliveries
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="lg:mx-10 rounded-2xl p-4 bg-white text-gray-500 hover:text-primary  flex flex-col justify-center">
+                                <div className="text-6xl py-5 mb-2 px-[1.45rem] cursor-text mx-auto transition-all duration-300">
+                                   <FaUsers/>
+                                </div>
+                                <div className="text-center">
+                                    <CountUp start={0} end={70} duration={2}>
+                                        {({ countUpRef, start }) => (
+                                            <VisibilitySensor onChange={start} delayedCall>
+                                                <span
+                                                    className="text-4xl my-2 text-primary font-semibold"
+                                                    ref={countUpRef}
+                                                />
+                                            </VisibilitySensor>
+                                        )}
+                                    </CountUp>
+                                    <span className="text-4xl my-2 text-primary font-semibold">
+                                        K+
+                                    </span>
+                                    <p className="text-2xl font-semibold my-2 uppercase font-mono">
+                                        Happy clients
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="lg:mx-10 rounded-2xl p-4 bg-white text-gray-500 hover:text-primary   flex flex-col justify-center">
+                                <div className="text-6xl py-5 mb-2 px-[1.45rem] cursor-text mx-auto transition-all duration-300">
+                                    <FaThumbsUp/>
+                                </div>
+                                <div className="text-center">
+                                    <CountUp start={0} end={10} duration={2}>
+                                        {({ countUpRef, start }) => (
+                                            <VisibilitySensor onChange={start} delayedCall>
+                                                <span
+                                                    className="text-4xl my-2 text-primary font-semibold"
+                                                    ref={countUpRef}
+                                                />
+                                            </VisibilitySensor>
+                                        )}
+                                    </CountUp>
+                                    <span className="text-4xl my-2 text-primary font-semibold">
+                                        K+
+                                    </span>
+                                    <p className="text-2xl font-semibold my-2 uppercase font-mono">
+                                        positive Feedbacks
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className='mx-16'>
-                    <HiCurrencyDollar className='text-5xl text-primary' />
-                    <p className='font-bold text-xl'>120M+</p>
-                    <p className='text-primary font-bold text-xl'>Annual revenue</p>
-                </div>
-                <div className='mx-16'>
-                    <MdReviews className='text-5xl text-primary' />
-                    <p className='font-bold text-xl'>33k+</p>
-                    <p className='text-primary font-bold text-xl'>Reviews</p>
-                </div>
-                <div className='mx-16'>
-                    <BsTools className='text-5xl text-primary' />
-                    <p className='font-bold text-xl '>10k+</p>
-                    <p className='text-primary font-bold text-xl'>tools</p>
+                <div className="flex justify-center items-center gap-5  mb-10">
+                    <h2 className="uppercase text-lg lg:text-2xl text-primary font-extrabold text-center font-poppins">
+                        if you have any queries
+                    </h2>
+                    <button className="button w-3/5"> Contact Us</button>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

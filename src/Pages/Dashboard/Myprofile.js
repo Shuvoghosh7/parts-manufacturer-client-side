@@ -36,9 +36,16 @@ const Myprofile = () => {
         return <Loading />
     }
     return (
-        <div className='lg:flex justify-around my-12'>
-            <div className='bg-[#25316D] text-white mt-12'>
-                <div className='mx-8 my-12 text-xl'>
+        <div className='grid lg:grid-cols-2 md:grid-cols-2 my-12 lg:mx-12 gap-10'>
+            <div className='bg-[#25316D] text-white  lg:h-[550px]'>
+                <div className='mx-8 my-12 text-xl '>
+                    <div className='text-center'>
+                        <div class="avatar">
+                            <div class="w-24 rounded-xl">
+                                <img src={`${user ? user?.photoURL : "https://i.ibb.co/T1D3tqN/images.png"}`} alt="" />
+                            </div>
+                        </div>
+                    </div>
                     <p><span className='font-bold text-[#FD841F]'>Name: </span>{user?.displayName}</p>
                     <p className='mt-3'><span className='font-bold text-[#FD841F]'>Email: </span>{user?.email}</p>
                     <div className='mt-3'>
@@ -53,7 +60,7 @@ const Myprofile = () => {
                     </div>
                 </div>
             </div>
-            <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-[#97D2EC]'>
+            <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-[#97D2EC] lg:h-[500px]'>
                 <div class="card-body">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control w-full max-w-xs">

@@ -29,7 +29,7 @@ const Purchase = () => {
             price_per_unit: +orderInfo.quantity * parts.price_per_unit,
             pname: parts.pname,    
         }
-            fetch("http://localhost:5000/add-orders", {
+            fetch("https://agile-eyrie-75679.herokuapp.com/add-orders", {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'

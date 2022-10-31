@@ -21,16 +21,10 @@ const Purchase = () => {
 
     }, []) 
     const onSubmit = (orderInfo) => {
-        /*   const info = {
-              ...data,
-              email: user?.email,
-              pname: parts.pname,
-              price_per_unit: parts.price_per_unit
-          } */
         setOrderedQuantity(orderInfo.quantity);
-
         const placedOrder = {
             ...orderInfo,
+            userName: user?.displayName,
             email: user?.email,
             price_per_unit: +orderInfo.quantity * parts.price_per_unit,
             pname: parts.pname,    

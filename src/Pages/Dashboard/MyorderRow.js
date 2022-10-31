@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MyorderRow = ({ order }) => {
     console.log(order)
-    const { _id, pname, email, quantity, price_per_unit,
-        paid, transactionId } = order
+    const { _id, pname, email, quantity, price_per_unit,paid, transactionId,userName } = order
 
     const handealDelete = (deletId) => {
 
@@ -25,6 +24,7 @@ const MyorderRow = ({ order }) => {
         <tr>
             <th>1</th>
             <th>{pname}</th>
+            <th>{userName}</th>
             <th>{email}</th>
             <th>{quantity}</th>
             <th>{price_per_unit}</th>

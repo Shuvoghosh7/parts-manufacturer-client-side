@@ -15,7 +15,7 @@ const Reviews = () => {
 
             <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 my-12 mx-12'>
                 {
-                    reviews.slice(Math.max(reviews.length - 3, 1)).map(rev => <ShowReview
+                    reviews?.slice(Math.max(reviews.length - 3, 1)).map(rev => <ShowReview
                         key={rev._id}
                         rev={rev}
                     />)

@@ -1,15 +1,5 @@
-/* .card-img:hover img{
-    transform: scale(1.4) ;
-    transition: transform 1s ease-in ;
-}
-.card-button:hover{
-    transform: scale(1.2) ;
-    transition: transform 1s ease-in ;
-} */
-/* .drill-card figure {
-  padding: 10%;
-} */
-.drill-card figure img {
+
+.product-card figure img {
     object-fit: fill;
     background-color: #000;
     transform: scale(1);
@@ -17,12 +7,12 @@
     transition: all 0.4s ease;
 }
 
-.drill-card:hover figure img {
+.product-card:hover figure img {
     transform: scale(1.1);
     opacity: 0.9;
 }
 
-.drill-card-body h2 {
+.product-card-body h2 {
     position: relative;
     display: flex;
     align-items: center;
@@ -30,7 +20,7 @@
     z-index: 2;
 }
 
-.drill-card-body h2::before {
+.product-card-body h2::before {
     content: " ";
     position: absolute;
     left: 0%;
@@ -43,13 +33,13 @@
     transition: transform 0.8s ease;
 }
 
-.drill-card-body:hover h2::before {
+.product-card-body:hover h2::before {
     transform: scaleX(1);
     z-index: -1;
     color: white;
 }
 
-.drill-card-body:hover h2 {
+.product-card-body:hover h2 {
     color: white;
     padding-left: 15px;
 }

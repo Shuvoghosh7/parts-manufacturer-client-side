@@ -11,11 +11,11 @@ const Allproducts = ({ part }) => {
     }
     return (
         <div>
-            <section className="drill-card card card-compact w-96 bg-teal-50 border-[0.5px] hover:shadow-2xl transition-all duration-300 mx-auto">
+            <section className="product-card card card-compact w-96 bg-teal-50 border-[0.5px] hover:shadow-2xl transition-all duration-300 mx-auto">
                 <figure className="overflow-hidden">
                     <img src={picture} alt="Shoes" />
                 </figure>
-                <div className="card-body drill-card-body pt-20">
+                <div className="card-body product-card-body pt-20">
                     <h2 className="card-title py-2">{pname}</h2>
                     <p>{description.slice(0, 120)}...</p>
                     <div className="flex justify-between">

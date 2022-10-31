@@ -14,7 +14,7 @@ const BusinessSummary = () => {
                 {/* <h2 className="uppercase mt-10 text-3xl lg:text-5xl text-primary font-extrabold text-center font-poppins">
           We Delivered Drills All Over The World
         </h2> */}
-                <SectionTitle><span className='business-title'>We Delivered Drills All Over The World</span></SectionTitle>
+                <SectionTitle>We Delivered Drills All Over The World</SectionTitle>
                 <div>
                     <div className="summery-inside-banner">
                         <div className="grid grid-cols-1 py-10 gap-5 md:grid-cols-2 lg:grid-cols-4">

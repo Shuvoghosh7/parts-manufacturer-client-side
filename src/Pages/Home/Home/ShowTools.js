@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../Style/ShowTools.css'
 
 const ShowTools = ({ part }) => {
@@ -12,28 +12,25 @@ const ShowTools = ({ part }) => {
     }
     return (
         <div>
-            <div class="card lg:w-[410px] bg-base-100 drop-shadow-2xl">
-                <figure>
-                    <div class="avatar mt-5 card-img">
-                        <div class="w-52 rounded-full border-4 border-indigo-600 p-8">
-                            <img src={picture} />
-                        </div>
-                    </div>
+            <section className="drill-card card card-compact w-96 bg-teal-50 border-[0.5px] hover:shadow-2xl transition-all duration-300 mx-auto">
+                <figure className="overflow-hidden">
+                    <img src={picture} alt="Shoes" />
                 </figure>
-                <div class="card-body">
-                    <h2 class="card-title flex justify-center text-3xl font-bold">{pname}</h2>
-                    <p className='text-lg font-medium'>{description}</p>
-                    {/* <p><span className='font-bold'>minimumQuantity:</span>{minimum_order_quantity}</p> */}
-                    <div class="card-actions justify-center mt-5">
-                        <button class="btn btn-primary bg-gradient-to-r from-secondary to-primary card-button" onClick={() => purchaseDetails(_id)}>Order Now</button>
+                <div className="card-body drill-card-body pt-20">
+                    <h2 className="card-title py-2">{pname}</h2>
+                    <p>{description.slice(0, 120)}...</p>
+                    <div className="flex justify-between">
+                        <p className="text-left">Available : {available_quantity}</p>
+                        <p className="text-right">Minimum Order : {minimum_order_quantity}</p>
                     </div>
-                    <div className='flex justify-between mt-5'>
-                        <p className='text-xl'><span className='font-bold text-xl'>Quantity:</span>{available_quantity}</p>
-                        <p className='text-xl ml-28'><span className='font-bold text-xl'>Price:</span> ${price_per_unit}</p>
+                    <div className="flex justify-between items-center">
+                        <p className="text-left text-2xl uppercase font-medium">
+                            price: <span className="font-bold">${price_per_unit}</span>
+                        </p>
+                        <button class="btn btn-primary bg-[#125d80] card-button text-white" onClick={() => purchaseDetails(_id)}>Order Now</button>
                     </div>
                 </div>
-            </div>
-
+            </section>
         </div>
 
 

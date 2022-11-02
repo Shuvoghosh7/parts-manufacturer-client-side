@@ -9,6 +9,7 @@ import '../../Pages/Style/Purchase.css'
 const Purchase = () => {
     const { purchaseId } = useParams()
     const [parts, setParts] = useState([])
+    const[x,setx]=useState([])
     const [user] = useAuthState(auth);
     const [orderedQuantity, setOrderedQuantity] = useState(0);
 

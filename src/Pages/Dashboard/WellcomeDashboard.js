@@ -40,7 +40,7 @@ const WellcomeDashboard = () => {
                         <FaUserAlt className='icon' />
                     </div>
                     <div className='card-text'>
-                        <p>Total User</p>
+                        <p>Total Product</p>
                         <p>{users?.length}</p>
                         <div className='progress'>
                             <div class="progress-bar2"></div>
@@ -54,7 +54,7 @@ const WellcomeDashboard = () => {
                     </div>
                     <div className='card-text'>
                         <p>Total Review</p>
-                        <p>{reviews?.length}</p>
+                        <p>{reviews?reviews.length:10}</p>
                         <div className='progress'>
                             <div class="progress-bar3"></div>
                         </div>

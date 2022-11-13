@@ -1,0 +1,87 @@
+.card-contant{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ff5370;
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+   
+ }
+ .card-contant2{
+     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffb64d;
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+ }
+ .card-contant3{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #4099ff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+ }
+ .card-contant4{
+     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ff5370;
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+ }
+ .icon-container{
+     background: rgba(0, 0, 0, 0.2);
+     border-radius: 100%;
+     height: 60px;
+     width: 60px;
+     
+ }
+ .icon{
+     font-size: 30px;
+     color: white;
+     position: relative;
+     top: 15px;
+     left: 16px;
+ }
+ .card-text{
+     display: block;
+     font-size: 20px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     font-weight: 400;
+     color:white;
+     line-height: 25px;
+     
+ }
+  .progress {
+     background: rgba(0, 0, 0, 0.2);
+     margin: 5px -10px 5px 0;
+     height: 2px;
+ }
+ .progress-bar{
+     width: 45%;
+     height: 20px;
+     background-color: white;  
+ }
+ .progress-bar2{
+     width: 40%;
+     height: 20px;
+     background-color: white;  
+ }
+ .progress-bar3{
+     width: 80%;
+     height: 20px;
+     background-color: white;  
+ }
+ .progress-bar4{
+     width: 30%;
+     height: 20px;
+     background-color: white;  
+ }

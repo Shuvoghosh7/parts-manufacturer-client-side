@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import auth from '../Firebase/Firebase.init';
 import Loading from "../Shared/Loading/Loading";
-import AddProfileInfo from './AddProfileInfo';
+
 import Profileinfo from './Profileinfo';
 const Myprofile = () => {
     const [user] = useAuthState(auth)
@@ -51,11 +51,7 @@ const Myprofile = () => {
                         info={info}
                     ></Profileinfo>)
                 }
-                <div>
-                    {
-                        modal && <AddProfileInfo setModal={setModal} />
-                    }
-                </div>
+              
             </div>
 
         </div>

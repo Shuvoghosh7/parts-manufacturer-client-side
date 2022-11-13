@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../Firebase/Firebase.init';
 import MyorderRow from './MyorderRow';
-
+import SectionTitle from "../../Pages/Shared/SectionTitle/SectionTitle";
 const MyOrders = () => {
     const [user, loading, error] = useAuthState(auth);
     const [orders, setOrder] = useState([])
@@ -15,8 +15,11 @@ const MyOrders = () => {
         }
     }, [user])
     return (
-        <div>
-            <h2 className='text-2xl'>Total My Order:{orders.length}</h2>
+        <div className='mt-5'>
+            <SectionTitle>
+                hi <span className="text-green-500">{user?.displayName}</span>, Here is
+                your orders
+            </SectionTitle>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>

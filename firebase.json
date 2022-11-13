@@ -1,6 +1,7 @@
 {
   "hosting": {
-    "public": "build",
+    "firebase": "<computer-parts-manufactu-ed97b>",
+    "public": "./dist",
     "ignore": [
       "firebase.json",
       "**/.*",

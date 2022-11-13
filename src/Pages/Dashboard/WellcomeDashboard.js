@@ -21,7 +21,7 @@ const WellcomeDashboard = () => {
             <div className='mt-10'>
                 <SectionTitle>WellCome Deshboard</SectionTitle>
             </div>
-            <div className='grid lg:grid-cols-3 gap-6 md:grid-cols-2 mx-12 mt-5'>
+            <div className='grid lg:grid-cols-3 gap-6 md:grid-cols-2 lg:mx-12 md:mx-12  mt-5'>
                 <div className='card-contant'>
                     <div className='icon-container'>
                         <MdProductionQuantityLimits className='icon' />

@@ -12,7 +12,7 @@ const Reviews = () => {
     return (
         <div className='my-16'>
             <SectionTitle>Customers Reviews:</SectionTitle>
-            <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 my-12 mx-12'>
+            <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 my-12 lg:mx-12 gap-y-5 mx-auto'>
                 {
                     reviews?.slice(Math.max(reviews.length - 3, 1)).map(rev => <ShowReview
                         key={rev._id}

@@ -92,15 +92,48 @@ const Navber = ({ children }) => {
             </div>
             <div class="drawer-side">
                 <label for="my-drawer-3" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
-
-                    <li><NavLink to='/' className='rounded-lg text-lg font-bold '>Home</NavLink></li>
-                    <li><NavLink to='/products' className='rounded-lg text-lg font-bold'>Products</NavLink></li>
+                <ul class="menu p-4 overflow-y-auto w-52 bg-base-100">
+                    <li>
+                        <CustomLink to='/'>Home</CustomLink>
+                    </li>
+                    <li>
+                        <CustomLink to='/products'>
+                            Products
+                        </CustomLink>
+                    </li>
                     {/* <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li> */}
                     {/* <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li> */}
 
-                    {user && <li><NavLink to='/dashboard' className='rounded-lg text-lg font-bold'>Dashboard</NavLink></li>}
-                    <li>{user ? <button className='btn btn-primary uppercase text-white bg-gradient-to-r from-secondary to-primary rounded-lg text-lg' onClick={logout}>sing out</button> : <NavLink to='/singin' className='rounded-lg'>SingIn</NavLink>}</li>
+                    {user ? (
+                        <>
+                            <li>
+                                <CustomLink to="/dashboard">
+                                    Dashboard
+                                </CustomLink>
+                            </li>
+                            <li>
+                                <CustomLink
+                                    onClick={() => {
+                                        signOut(auth);
+                                        localStorage.removeItem("authorizationToken");
+                                    }}
+                                    to="/singin"
+                                >
+                                    Logout
+                                </CustomLink>
+                            </li>
+                        </>
+                    ) : (
+                        <>
+                            <li>
+                                <CustomLink to="/singin">Login</CustomLink>
+                            </li>
+                            <li>
+                                <CustomLink to="/singup">Register</CustomLink>
+                            </li>
+                        </>
+                    )}
+
 
 
                 </ul>

@@ -26,10 +26,10 @@ const Navber = ({ children }) => {
 
                     </label>}
                     <Link
-                        to="/home"
+                        to="/"
                         className="flex-1 px-2 font-bold text-2xl uppercase mx-2 text-white"
                     >
-                        Atop Technologies
+                        Vertex Technologies
                     </Link>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">

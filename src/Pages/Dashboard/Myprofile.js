@@ -1,118 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import auth from '../Firebase/Firebase.init';
 import Loading from "../Shared/Loading/Loading";
+import AddProfileInfo from './AddProfileInfo';
 import Profileinfo from './Profileinfo';
 const Myprofile = () => {
     const [user] = useAuthState(auth)
-    const { register, reset, formState: { errors }, handleSubmit } = useForm();
-    const onSubmit = (data) => {
-        const profileData = {
-            ...data,
-            email: user?.email
-        };
-        fetch("https://agile-eyrie-75679.herokuapp.com/profile", {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json',
-                "authorization": `Bearer ${localStorage.getItem('AccessToken')}`
 
-            },
-            body: JSON.stringify(profileData)
-        })
-            .then(res => res.json())
-            .then(data => {
-                toast.success(' added my profile Information')
-                console.log(data)
-                reset();
-            })
-        reset()
-    }
+    const [modal, setModal] = useState(false)
+    const { register, reset, formState: { errors }, handleSubmit } = useForm();
+
+   
     const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://agile-eyrie-75679.herokuapp.com/get-profile?email=${user.email}`).then(res => res.json()))
+
     if (isLoading) {
         return <Loading />
     }
     return (
-        <div className='grid lg:grid-cols-2 md:grid-cols-2 my-12 lg:mx-12 gap-10'>
-            <div className='bg-[#25316D] text-white  lg:h-[550px]'>
-                <div className='mx-8 my-12 text-xl '>
-                    <div className='text-center'>
-                        <div class="avatar">
-                            <div class="w-24 rounded-xl">
-                                <img src={`${user ? user?.photoURL : "https://i.ibb.co/T1D3tqN/images.png"}`} alt="" />
-                            </div>
+        <div className="container w-full mx-auto p-5 lg:p-10 mb-40 mt-5">
+            <div className="md:flex w-full no-wrap md:-mx-2 ">
+                <div className="w-full lg:w-1/3 md:mx-2 lg:mt-1 p-3">
+                    <div className="bg-white p-5 rounded-br-lg rounded-bl-lg border-t-4 border-[#125f82]">
+                        <div className="image overflow-hidden">
+                            <img
+                                className="h-auto w-full mx-auto"
+                                src={`${user?user.photoURL
+                                    : "https://i.ibb.co/T1D3tqN/images.png"
+                                    }`}
+                                alt=""
+                            />
                         </div>
-                    </div>
-                    <p><span className='font-bold text-[#FD841F]'>Name: </span>{user?.displayName}</p>
-                    <p className='mt-3'><span className='font-bold text-[#FD841F]'>Email: </span>{user?.email}</p>
-                    <div className='mt-3'>
-
-                        {
-                            profile.map(info => <Profileinfo
-                                key={info._id}
-                                info={info}
-                            ></Profileinfo>)
-                        }
-
+                        <h1 className="text-gray-900 font-bold text-xl leading-8 my-1">
+                            {user?user.displayName : "- - -"}
+                        </h1>
+                        <h3 className="text-gray-600 font-lg text-semibold leading-6">
+                            {user?user.email : "- - -"}
+                        </h3>
+                        <ul className="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
+                            
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-[#97D2EC] lg:h-[500px]'>
-                <div class="card-body">
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text text-xl font-bold">Education</span>
-                            </label>
-                            <input
-                                type="text"
-                                placeholder="Your education"
-                                className="input input-bordered w-full max-w-xs"
-                                {...register("education")}
-                            />
 
-                        </div>
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text text-xl font-bold">Location</span>
-                            </label>
-                            <textarea
-                                type="name"
-                                className="input input-bordered w-full max-w-xs"
-                                {...register("location")}
-                            />
-
-                        </div>
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text text-xl font-bold">phnoe number</span>
-                            </label>
-                            <input
-                                type="text"
-                                className="input input-bordered w-full max-w-xs"
-                                {...register("phoneNumber")}
-                            />
-
-                        </div>
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label">
-                                <span className="label-text text-xl font-bold">LinkedIn profile link</span>
-                            </label>
-                            <input
-                                type="text"
-                                className="input input-bordered w-full max-w-xs"
-                                {...register("LinkedInLink")}
-                            />
-
-                        </div>
-                        <input className='btn w-full max-w-xs mt-5 bg-[#5433FF] text-white text-xl' type="submit" value="Add Profile Info" />
-                    </form>
+                {
+                    profile.map(info => <Profileinfo
+                        key={info._id}
+                        info={info}
+                    ></Profileinfo>)
+                }
+                <div>
+                    {
+                        modal && <AddProfileInfo setModal={setModal} />
+                    }
                 </div>
             </div>
-        </div >
+
+        </div>
     );
 };
 

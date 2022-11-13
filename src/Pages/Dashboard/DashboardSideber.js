@@ -21,7 +21,7 @@ const DashboardSideber = ({ children }) => {
             </div>
             <div class="drawer-side">
                 <label for="my-drawer-2" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-72 bg-[#5433FF]  text-white">
+                <ul class="menu p-4 overflow-y-auto w-72 bg-[#0D4C92]  text-white">
                     {/*   Sidebar content here */}
                     <li></li>
                     {(!admin) && <>

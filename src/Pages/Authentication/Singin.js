@@ -108,9 +108,9 @@ const Singin = () => {
                     <p>New to Doctors Portal? <Link className='text-secondary' to="/singup">Create new account</Link></p>
 
                     <div className="divider">OR</div>
-                    <div className="flex justify-between">
-                        <button className='btn btn-primary btn-outline' onClick={() => signInWithGoogle()}><FcGoogle className='text-2xl mr-2' />  Google</button>
-                        <button className='btn btn-primary btn-outline'><BsFacebook className='text-2xl mr-2' /> Facebook</button>
+                    <div className="flex justify-center">
+                        <button className='btn btn-primary btn-outline w-full' onClick={() => signInWithGoogle()}><FcGoogle className='text-2xl mr-2' />  Google</button>
+                        
                     </div>
                 </div>
             </div>

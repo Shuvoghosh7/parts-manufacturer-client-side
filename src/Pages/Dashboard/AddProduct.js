@@ -23,7 +23,7 @@ const AddProduct = () => {
             })
     }
     return (
-        <div className='flex  justify-center align-middle mt-12'>
+        <div className='flex  justify-center align-middle my-12'>
             <div class="card lg:w-[450px] w-96 bg-[#25316D] shadow-xl">
                 <div class="card-body items-center text-center">
                     <form onSubmit={handleSubmit(onSubmit)}>

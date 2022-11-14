@@ -68,8 +68,11 @@ function App() {
         <Route path='*' element={<Notfound/>}/>
       </Routes>
       <Footer/>
+   
       <ToastContainer />
+      
       </Navber>
+      
     </div>
   );
 }

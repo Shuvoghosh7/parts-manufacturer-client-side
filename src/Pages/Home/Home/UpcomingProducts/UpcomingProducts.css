@@ -1,0 +1,64 @@
+.new-product1{
+    background-image: url(../../../../images/Phone/motherboard1.jpeg);
+    min-height: 251px;
+    width: 350px;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    margin: auto;
+    
+}
+.product-name{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 4px;
+    color:white;
+    position: relative;
+    top: 200px;
+    left: 15px;  
+}
+.new-product1:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: box-shadow 0.3s ease-in-out;
+    border:  1px solid rgb(49, 40, 40);;
+}
+.new-product2{
+    background-image: url(../../../../images/Phone/tv.jpg);
+    min-height: 251px;
+    width: 350px;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    margin: auto;
+}
+.new-product2:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: box-shadow 0.3s ease-in-out;
+    border:  1px solid rgb(49, 40, 40);;
+}
+.new-product3{
+    background-image: url(../../../../images/Phone/phone\ Display.jpg);
+    min-height: 251px;
+    width: 350px;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    margin: auto;
+}
+.new-product3:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    transition: box-shadow 0.3s ease-in-out;
+    border:  1px solid rgb(49, 40, 40);;
+}
+

@@ -12,6 +12,7 @@ import ProductFreture from './ProductFreture';
 
 import Reviews from './Reviews';
 import Tools from './Tools';
+import UpcomingProducts from './UpcomingProducts/UpcomingProducts';
 
 
 const Home = () => {
@@ -23,8 +24,9 @@ const Home = () => {
             <Tools/>
             <OurServices/>
             <OurClient/>
-            <Reviews/>
             <Process/>
+            <UpcomingProducts/>
+            <Reviews/>
             <Faq/>
             <Contact/>
 

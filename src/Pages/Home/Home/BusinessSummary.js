@@ -7,8 +7,10 @@ import { FaThumbsUp } from 'react-icons/fa';
 import { FaUsers } from 'react-icons/fa';
 import { FaTruckMoving } from 'react-icons/fa';
 import { FaFlag } from 'react-icons/fa';
+import { Zoom } from "react-reveal";
 const BusinessSummary = () => {
     return (
+        <Zoom bottom cascade>
         <section className="summery-banner-content mt-5">
             <div className="summery-banner py-15 px-5">
                 {/* <h2 className="uppercase mt-10 text-3xl lg:text-5xl text-primary font-extrabold text-center font-poppins">
@@ -121,6 +123,7 @@ const BusinessSummary = () => {
                 </div>
             </div>
         </section>
+        </Zoom>
     );
 };
 

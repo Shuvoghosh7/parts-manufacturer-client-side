@@ -36,7 +36,7 @@ const Faq = () => {
     },
   ];
   return (
-    <Fade top>
+    <Fade bottom>
       <div className="w-full  py-20">
         <SectionTitle>FAQ.</SectionTitle>
         <div className="w-full flex justify-center">

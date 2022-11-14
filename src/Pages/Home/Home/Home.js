@@ -2,6 +2,7 @@ import React from 'react';
 
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
+import Contact from './Contact/Contact';
 import Faq from './Faq/Faq';
 import MostOrderCountries from './MostOrderCountries';
 import Process from './Process/Process';
@@ -21,6 +22,7 @@ const Home = () => {
             <Reviews/>
             <Process/>
             <Faq/>
+            <Contact/>
 
         </div>
     );

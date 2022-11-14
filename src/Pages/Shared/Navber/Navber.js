@@ -51,6 +51,11 @@ const Navber = ({ children }) => {
                                 </li>
                                 {/* <li><NavLink to='/myPortfolio' className='rounded-lg'>MyPortfolio</NavLink></li> */}
                                 {/* <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li> */}
+                                <li>
+                                    <CustomLink to='/contact'>
+                                        Contact Us
+                                    </CustomLink>
+                                </li>
 
                                 {user ? (
                                     <>
@@ -81,7 +86,6 @@ const Navber = ({ children }) => {
                                         </li>
                                     </>
                                 )}
-
 
                             </ul>
                         </div>

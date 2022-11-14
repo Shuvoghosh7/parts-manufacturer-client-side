@@ -28,6 +28,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Products from './Pages/Home/Home/Products/Products';
+import Contact from './Pages/Home/Home/Contact/Contact';
 
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
         </Route>
         <Route path='/myPortfolio' element={<MyPortfolio/>}/>
         <Route path='/blogs' element={<Blogs/>}/>
+        <Route path='/contact' element={<Contact/>}/>
         <Route path='*' element={<Notfound/>}/>
       </Routes>
       <Footer/>

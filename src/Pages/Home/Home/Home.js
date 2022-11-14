@@ -5,6 +5,7 @@ import BusinessSummary from './BusinessSummary';
 import Contact from './Contact/Contact';
 import Faq from './Faq/Faq';
 import MostOrderCountries from './MostOrderCountries';
+import OurServices from './OurServices/OurServices';
 import Process from './Process/Process';
 import ProductFreture from './ProductFreture';
 
@@ -19,6 +20,7 @@ const Home = () => {
             <BusinessSummary/>
             <ProductFreture/> 
             <Tools/>
+            <OurServices/>
             <Reviews/>
             <Process/>
             <Faq/>

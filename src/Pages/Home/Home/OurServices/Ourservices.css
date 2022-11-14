@@ -1,0 +1,80 @@
+.service{
+    color: white;
+    padding: 30px;
+}
+.service-card{
+    background: white !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+    color: #1c1e22;
+    padding: 20px;
+    position: relative;
+   
+}
+.service-image img{
+   margin: auto;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px!important;
+   border: none;
+   border-radius: 50%;
+   padding: 20px;
+   width: 130px;
+   
+}
+.service-card:hover  img{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px!important;
+    border: 1px solid rgb(49, 40, 40);
+}
+.service-text h1{
+    font-size: 22px;
+    font-weight: bold;
+    font-family:Cursive;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+.service-text p{
+    text-align: justify;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 1.5;
+    color: black;
+    padding-bottom: 10px;
+}
+.service-broder{
+    z-index: 2;
+}
+.service-card::before, .service-card::after{
+    content: '';
+    height: 0;
+    width: 0;
+    background: linear-gradient(0deg,#ae216b,#df4454,#f67a36);
+    position: absolute;
+    z-index: -1;
+    animation: none;
+}
+.service-card::before{
+    top: -5px;
+    left: 0;
+}
+.service-card::after{
+    right: 0;
+    bottom: -5px;
+}
+
+@keyframes stroke{
+    0%{
+        height: 5px;
+        width: 0px;
+    }
+    50%{
+        height: 5px;
+        width: calc(100% + 5px);
+    }
+    100%{
+        height: calc(100% + 10px);
+        width: calc(100% + 5px);
+    }
+}
+
+.service-card:hover::before, .service-card:hover::after{
+    animation: stroke 0.2s linear;
+    animation-fill-mode: forwards;
+}

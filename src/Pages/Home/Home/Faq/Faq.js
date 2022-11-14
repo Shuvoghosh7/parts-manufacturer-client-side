@@ -1,6 +1,6 @@
 import React from "react";
 import SectionTitle from "../../../Shared/SectionTitle/SectionTitle";
-
+import Fade from 'react-reveal/Fade';
 const Faq = () => {
   const questions = [
     {
@@ -36,27 +36,29 @@ const Faq = () => {
     },
   ];
   return (
-    <div className="w-full  py-20">
-      <SectionTitle>FAQ.</SectionTitle>
-      <div className="w-full flex justify-center">
-        <div className="w-full lg:w-2/5 max-auto px-5 lg:p-0 rounded-lg">
-          {questions.map((question, index) => (
-            <div
-              key={index}
-              className="collapse collapse-arrow border rounded-lg"
-            >
-              <input type="checkbox" className="peer" />
-              <div className="collapse-title peer-checked:border-2 border-primary rounded-lg">
-                {question.question}
+    <Fade top>
+      <div className="w-full  py-20">
+        <SectionTitle>FAQ.</SectionTitle>
+        <div className="w-full flex justify-center">
+          <div className="w-full lg:w-2/5 max-auto px-5 lg:p-0 rounded-lg">
+            {questions.map((question, index) => (
+              <div
+                key={index}
+                className="collapse collapse-arrow border rounded-lg"
+              >
+                <input type="checkbox" className="peer" />
+                <div className="collapse-title peer-checked:border-2 border-primary rounded-lg">
+                  {question.question}
+                </div>
+                <div className="collapse-content bg-white">
+                  <p className="p-6">{question?.answer}</p>
+                </div>
               </div>
-              <div className="collapse-content bg-white">
-                <p className="p-6">{question?.answer}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </Fade>
   );
 };
 

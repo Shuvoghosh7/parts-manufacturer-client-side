@@ -3,7 +3,7 @@ import './Contact.css'
 import emailjs from '@emailjs/browser';
 import swal from 'sweetalert';
 import SectionTitle from '../../../Shared/SectionTitle/SectionTitle';
-
+import Zoom from 'react-reveal/Zoom';
 
 const Contact = () => {
     const sendEmail = (event) => {
@@ -18,7 +18,8 @@ const Contact = () => {
             });
     };
     return (
-        <div className='my-12 lg:mx-28 mx-5 contact' id='contact'>
+        <Zoom bottom>
+        <div className='my-2 lg:mx-28 mx-5 contact' id='contact'>
             <div className='contact-form lg:mx-20'>
                 <SectionTitle>Get In Touch</SectionTitle>
                 <div>
@@ -56,6 +57,7 @@ const Contact = () => {
             </div>
 
         </div>
+        </Zoom>
     );
 };
 

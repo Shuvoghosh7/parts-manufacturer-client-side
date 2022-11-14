@@ -6,6 +6,7 @@ import auth from '../Firebase/Firebase.init';
 
 const Profileinfo = ({ info }) => {
     const { education, location, phoneNumber, LinkedInLink, _id } = info
+    console.log( phoneNumber)
     const [user] = useAuthState(auth)
     const [isEdit, setIsEdit] = useState(null);
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
@@ -104,13 +105,13 @@ const Profileinfo = ({ info }) => {
                             </div>
                         </div>
                     </div>
-                    <label
+                    {/* <label
                         htmlFor="my-modal-6"
                         onClick={() => setIsEdit(true)}
                         className="text-center block w-full text-primary text-md shadow font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4"
                     >
                         Edit Profile
-                    </label>
+                    </label> */}
                 </div>
             </div>
             <div className="my-4"></div>

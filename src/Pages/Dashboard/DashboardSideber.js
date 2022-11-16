@@ -36,6 +36,7 @@ const DashboardSideber = ({ children }) => {
                         <li className='text-xl font-bold' ><NavLink to="/dashboard/AddProduct"><GrProductHunt/> Add Product</NavLink></li>
                         <li className='text-xl font-bold'><NavLink to="/dashboard/makeAdmin"><RiAdminFill/> Make Admin</NavLink></li>
                         <li className='text-xl font-bold'><NavLink to="/dashboard/manageProducts"> <GrProductHunt/>Manage Products</NavLink></li>
+                        <li className='text-xl font-bold' ><NavLink to="/dashboard/AddTeamMember"><GrProductHunt/> Add Member</NavLink></li>
                     </>}
 
                 </ul>

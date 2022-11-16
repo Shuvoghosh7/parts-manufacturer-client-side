@@ -29,6 +29,8 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Products from './Pages/Home/Home/Products/Products';
 import Contact from './Pages/Home/Home/Contact/Contact';
+import AboutUs from './Pages/AboutUs/AboutUs';
+import AddTeamMemer from './Pages/Dashboard/AddTeamMemer';
 
 
 function App() {
@@ -63,10 +65,12 @@ function App() {
         <Route path='AddProduct' element={<RequireAdmin><AddProduct/></RequireAdmin>} />
         <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin/></RequireAdmin>} />
         <Route path='manageProducts' element={<RequireAdmin><ManageProducts/></RequireAdmin>} />
+        <Route path='AddTeamMember' element={<RequireAdmin><AddTeamMemer/></RequireAdmin>} />
         </Route>
         <Route path='/myPortfolio' element={<MyPortfolio/>}/>
         <Route path='/blogs' element={<Blogs/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/about' element={<AboutUs/>}/>
         <Route path='*' element={<Notfound/>}/>
       </Routes>
       <Footer/>

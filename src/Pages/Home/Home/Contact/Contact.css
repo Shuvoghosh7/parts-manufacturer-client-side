@@ -36,7 +36,7 @@
   margin-top: 30px;
 }
 
-.input {
+.inputContact {
   background: white !important;
   /* box-shadow: 10px 10px 19px #1c1e22, -20px -10px 19px #262a2e !important; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -72,8 +72,8 @@
   width: 50px;
 }
 
-.input:focus~.cut,
-.input:not(:placeholder-shown)~.cut {
+.inputContact:focus~.cut,
+.inputContact:not(:placeholder-shown)~.cut {
   transform: translateY(8px);
 }
 
@@ -90,16 +90,16 @@
   top: 20px;
 }
 
-.input:focus~.placeholder,
-.input:not(:placeholder-shown)~.placeholder {
+.inputContact:focus~.placeholder,
+.inputContact:not(:placeholder-shown)~.placeholder {
   transform: translateY(-30px) translateX(10px) scale(0.75);
 }
 
-.input:not(:placeholder-shown)~.placeholder {
+.inputContact:not(:placeholder-shown)~.placeholder {
   color: black;
 }
 
-.input:focus~.placeholder {
+.inputContact:focus~.placeholder {
   color: black;
 }
 

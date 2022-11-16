@@ -53,7 +53,12 @@ const Navber = ({ children }) => {
                                 {/* <li><NavLink to='/blogs' className='rounded-lg'>Blogs</NavLink></li> */}
                                 <li>
                                     <CustomLink to='/contact'>
-                                        Contact Us
+                                        Contact US
+                                    </CustomLink>
+                                </li>
+                                <li>
+                                    <CustomLink to='/about'>
+                                        About US
                                     </CustomLink>
                                 </li>
 

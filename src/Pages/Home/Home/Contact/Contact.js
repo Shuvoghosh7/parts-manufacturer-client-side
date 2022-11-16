@@ -27,24 +27,24 @@ const Contact = () => {
 
                         <div class="form">
                             <div class="input-container ic1">
-                                <input id="name" name='name' class="input" type="text" placeholder=" " required/>
+                                <input id="name" name='name' class="inputContact" type="text" placeholder=" " required/>
                                 <div class="cut"></div>
                                 <label for="firstname" class="placeholder">Name<sup>*</sup></label>
                             </div>
                             <div class="input-container ic2">
-                                <input id="email" name='email' class="input" type="text" placeholder=" " required/>
+                                <input id="email" name='email' class="inputContact" type="text" placeholder=" " required/>
                                 <div class="cut cut-short"></div>
                                 <label for="email" class="placeholder">Email<sup>*</sup></label>
                                 
                             </div>
                             <div class="input-container ic2">
-                                <input id="subject" name='subject' class="input" type="text" placeholder=" " required/>
+                                <input id="subject" name='subject' class="inputContact" type="text" placeholder=" " required/>
                                 <div class="cut"></div>
                                 <label for="lastname" class="placeholder">Subject<sup>*</sup></label>
                             </div>
                             
                             <div class="input-container ic2">
-                                <textarea id="message" name='message' class="input text-area" type="text" placeholder=" " required/>
+                                <textarea id="message" name='message' class="inputContact text-area" type="text" placeholder=" " required/>
                                 <div class="cut cut-short"></div>
                                 <label for="email" class="placeholder">Message<sup>*</sup></label>
                                 

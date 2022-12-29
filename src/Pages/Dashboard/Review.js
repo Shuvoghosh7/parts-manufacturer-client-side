@@ -8,12 +8,12 @@ import Loading from '../Shared/Loading/Loading';
 import { FaStar } from "react-icons/fa";
 
 const colors = {
-    orange: '#FFBA5A',
-    grey: '#a9a9a9',
-  }
-  
+  orange: '#FFBA5A',
+  grey: '#a9a9a9',
+}
+
 const Review = () => {
-    const [user, loading, error] = useAuthState(auth)
+  const [user, loading, error] = useAuthState(auth)
   const [load, setLoading] = useState(false);
   const { register, handleSubmit, reset } = useForm();
 
@@ -57,7 +57,7 @@ const Review = () => {
     const review = { ...data, rating, email, photoURL, displayName }
     console.log(review);
 
-    fetch("https://agile-eyrie-75679.herokuapp.com/review", {
+    fetch("https://manufacturer-website.vercel.app/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -78,8 +78,8 @@ const Review = () => {
       })
     reset()
   }
-    return (
-        <div className='w-full p-10 lg:w-1/2 mx-auto'>
+  return (
+    <div className='w-full p-10 lg:w-1/2 mx-auto'>
       <h2 className='text-[#00AAB3] text-center text-3xl font-bold'>Add Your Review</h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className='card-body pb-0'>
@@ -126,7 +126,7 @@ const Review = () => {
       </form>
 
     </div>
-    );
+  );
 };
 
 export default Review;

@@ -6,11 +6,11 @@ import { FaUserAlt } from 'react-icons/fa';
 import { useQuery } from 'react-query';
 import SectionTitle from "../../Pages/Shared/SectionTitle/SectionTitle";
 const WellcomeDashboard = () => {
-    const { data: parts, isLoading } = useQuery('parts', () => fetch('https://agile-eyrie-75679.herokuapp.com/get-parts').then(res => res.json()))
+    const { data: parts, isLoading } = useQuery('parts', () => fetch('https://manufacturer-website.vercel.app/get-parts').then(res => res.json()))
 
-    const { data: reviews } = useQuery('review', () => fetch('https://agile-eyrie-75679.herokuapp.com/get-review').then(res => res.json()))
+    const { data: reviews } = useQuery('review', () => fetch('https://manufacturer-website.vercel.app/get-review').then(res => res.json()))
 
-    const { data: users } = useQuery('users', () => fetch('https://agile-eyrie-75679.herokuapp.com/user', {
+    const { data: users } = useQuery('users', () => fetch('https://manufacturer-website.vercel.app/user', {
         method: "GET",
         headers: {
             'authorization': `Bearer ${localStorage.getItem('AccessToken')}`
@@ -54,7 +54,7 @@ const WellcomeDashboard = () => {
                     </div>
                     <div className='card-text'>
                         <p>Total Review</p>
-                        <p>{reviews?reviews.length:10}</p>
+                        <p>{reviews ? reviews.length : 10}</p>
                         <div className='progress'>
                             <div class="progress-bar3"></div>
                         </div>

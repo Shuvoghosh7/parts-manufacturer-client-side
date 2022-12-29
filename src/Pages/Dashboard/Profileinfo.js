@@ -6,7 +6,7 @@ import auth from '../Firebase/Firebase.init';
 
 const Profileinfo = ({ info }) => {
     const { education, location, phoneNumber, LinkedInLink, _id } = info
-    console.log( phoneNumber)
+    console.log(phoneNumber)
     const [user] = useAuthState(auth)
     const [isEdit, setIsEdit] = useState(null);
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
@@ -16,7 +16,7 @@ const Profileinfo = ({ info }) => {
             ...data,
             email: user?.email
         };
-        fetch("https://agile-eyrie-75679.herokuapp.com/profile", {
+        fetch("https://manufacturer-website.vercel.app/profile", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -33,30 +33,30 @@ const Profileinfo = ({ info }) => {
             })
         reset()
     }
-   /*  const updateProfile = (event) => {
-        event.preventDefault();
-        const education = event.target.education.value
-        const location = event.target.location.value
-        const phoneNumber = event.target.phoneNumber.value
-        const LinkedInLink = event.target.LinkedInLink.value
-
-        fetch(`https://agile-eyrie-75679.herokuapp.com/update-profile/${_id}`, {
-            method: "PUT",
-            headers: {
-                'content-type': 'application/json',
-
-            },
-            body: JSON.stringify({ education, location, phoneNumber, LinkedInLink })
-        })
-            .then(res => res.json())
-            .then(data => {
-
-                console.log(data)
-                toast("Your Profile update successfully")
-                window.location.reload(false);
-            })
-
-    } */
+    /*  const updateProfile = (event) => {
+         event.preventDefault();
+         const education = event.target.education.value
+         const location = event.target.location.value
+         const phoneNumber = event.target.phoneNumber.value
+         const LinkedInLink = event.target.LinkedInLink.value
+ 
+         fetch(`https://manufacturer-website.vercel.app/update-profile/${_id}`, {
+             method: "PUT",
+             headers: {
+                 'content-type': 'application/json',
+ 
+             },
+             body: JSON.stringify({ education, location, phoneNumber, LinkedInLink })
+         })
+             .then(res => res.json())
+             .then(data => {
+ 
+                 console.log(data)
+                 toast("Your Profile update successfully")
+                 window.location.reload(false);
+             })
+ 
+     } */
     return (
         <div className="grid grid-cols-1 w-full">
             <div className="w-full my-4 h-64  border-t-4 border-[#125f82]">

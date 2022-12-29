@@ -5,7 +5,7 @@ const ManageProductsRow = ({ product, index }) => {
     const { _id, picture, pname, available_quantity, price_per_unit } = product
 
     const handealDelete = (deletId) => {
-        const url = `https://agile-eyrie-75679.herokuapp.com/detete-parts/${deletId}`
+        const url = `https://manufacturer-website.vercel.app/detete-parts/${deletId}`
         fetch(url, {
             method: 'DELETE'
         })
@@ -17,30 +17,30 @@ const ManageProductsRow = ({ product, index }) => {
 
 
     }
-    const handealEdit=(event)=>{
+    const handealEdit = (event) => {
         event.preventDefault();
-        const pname=event.target.pname.value
-        const available_quantity=event.target.available_quantity.value
-        const price_per_unit=event.target.price_per_unit.value
-        const data={
+        const pname = event.target.pname.value
+        const available_quantity = event.target.available_quantity.value
+        const price_per_unit = event.target.price_per_unit.value
+        const data = {
             pname,
             available_quantity,
             price_per_unit
         }
-        fetch(`https://agile-eyrie-75679.herokuapp.com/edit-parts/${_id}`, {
-                method: "PUT",
-                headers: {
-                    'content-type': 'application/json',
-                    
-                },
-                body: JSON.stringify(data)
+        fetch(`https://manufacturer-website.vercel.app/edit-parts/${_id}`, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json',
+
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                toast("Product update successfully")
+                window.location.reload(false);
             })
-                .then(res => res.json())
-                .then(data => {
-                    toast("Product update successfully")
-                    window.location.reload(false);
-                })
-                
+
     }
     return (
         <tr>

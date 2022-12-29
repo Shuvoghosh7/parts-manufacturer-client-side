@@ -6,14 +6,14 @@ import MakeAdminRow from './MakeAdminRow';
 
 const MakeAdmin = () => {
     const navigate = useNavigate()
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://agile-eyrie-75679.herokuapp.com/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://manufacturer-website.vercel.app/user', {
         method: "GET",
         headers: {
             'authorization': `Bearer ${localStorage.getItem('AccessToken')}`
         }
     })
         .then(res => res.json()))
-   
+
     if (isLoading) {
         return <Loading />
     }
@@ -32,7 +32,7 @@ const MakeAdmin = () => {
                     </thead>
                     <tbody>
                         {
-                            users?.map((user,index) => <MakeAdminRow
+                            users?.map((user, index) => <MakeAdminRow
                                 key={user._id}
                                 user={user}
                                 index={index}

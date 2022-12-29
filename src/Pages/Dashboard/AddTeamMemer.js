@@ -6,7 +6,7 @@ const AddTeamMemer = () => {
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        fetch("https://agile-eyrie-75679.herokuapp.com/add-team", {
+        fetch("https://manufacturer-website.vercel.app/add-team", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -75,7 +75,7 @@ const AddTeamMemer = () => {
                             />
 
                         </div>
-                        
+
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text text-xl font-bold text-white">Description</span>

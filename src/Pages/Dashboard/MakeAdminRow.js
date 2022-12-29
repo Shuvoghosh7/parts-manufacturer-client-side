@@ -1,10 +1,10 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const MakeAdminRow = ({ user, refetch,index }) => {
+const MakeAdminRow = ({ user, refetch, index }) => {
     const { email, role } = user
     const makeAdmin = () => {
-        fetch(`https://agile-eyrie-75679.herokuapp.com/user/admin/${email}`, {
+        fetch(`https://manufacturer-website.vercel.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('AccessToken')}`
@@ -27,7 +27,7 @@ const MakeAdminRow = ({ user, refetch,index }) => {
     }
     return (
         <tr>
-            <th>{index+1}</th>
+            <th>{index + 1}</th>
             <td>{email}</td>
             <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-xs">Make admin</button>}</td>
 

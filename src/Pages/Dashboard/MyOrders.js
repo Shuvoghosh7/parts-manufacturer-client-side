@@ -9,7 +9,7 @@ const MyOrders = () => {
     console.log(orders)
     useEffect(() => {
         if (user) {
-            fetch(`https://agile-eyrie-75679.herokuapp.com/orders?email=${user.email}`)
+            fetch(`https://manufacturer-website.vercel.app/orders?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => setOrder(data));
         }

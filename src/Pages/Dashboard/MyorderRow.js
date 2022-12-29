@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const MyorderRow = ({ order }) => {
     console.log(order)
-    const { _id, pname, email, quantity, price_per_unit,paid, transactionId,userName } = order
+    const { _id, pname, email, quantity, price_per_unit, paid, transactionId, userName } = order
 
     const handealDelete = (deletId) => {
 
-        const url = `https://agile-eyrie-75679.herokuapp.com/orders/${deletId}`
+        const url = `https://manufacturer-website.vercel.app/orders/${deletId}`
         fetch(url, {
             method: 'DELETE'
 

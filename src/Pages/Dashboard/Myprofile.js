@@ -14,14 +14,14 @@ const Myprofile = () => {
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
 
 
-    const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://agile-eyrie-75679.herokuapp.com/get-profile?email=${user.email}`).then(res => res.json()))
+    const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://manufacturer-website.vercel.app/get-profile?email=${user.email}`).then(res => res.json()))
 
     const onSubmit = (data) => {
         const profileData = {
             ...data,
             email: user?.email
         };
-        fetch("https://agile-eyrie-75679.herokuapp.com/profile", {
+        fetch("https://manufacturer-website.vercel.app/profile", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -132,7 +132,7 @@ const Myprofile = () => {
                                 </label>
                                 <input
                                     {...register
-                                    ("phoneNumber")}
+                                        ("phoneNumber")}
 
                                     className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                     type="text"

@@ -6,7 +6,7 @@ const AddProduct = () => {
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        fetch("https://agile-eyrie-75679.herokuapp.com/add-parts", {
+        fetch("https://manufacturer-website.vercel.app/add-parts", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

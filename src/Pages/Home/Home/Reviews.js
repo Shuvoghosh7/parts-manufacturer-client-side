@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading/Loading';
 import ShowReview from '../ShowReview';
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 const Reviews = () => {
-    const { data: reviews, isLoading } = useQuery('review', () => fetch('https://agile-eyrie-75679.herokuapp.com/get-review').then(res => res.json()))
+    const { data: reviews, isLoading } = useQuery('review', () => fetch('https://manufacturer-website.vercel.app/get-review').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />

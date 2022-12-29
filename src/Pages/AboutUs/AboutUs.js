@@ -8,7 +8,7 @@ import teamMember1 from '../../images/team/team.jpg'
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading/Loading';
 const AboutUs = () => {
-    const { data: teams, isLoading } = useQuery('teams', () => fetch('https://agile-eyrie-75679.herokuapp.com/get-team').then(res => res.json()))
+    const { data: teams, isLoading } = useQuery('teams', () => fetch('https://manufacturer-website.vercel.app/get-team').then(res => res.json()))
 
     if (isLoading) {
         return <Loading />

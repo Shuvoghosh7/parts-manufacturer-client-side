@@ -5,14 +5,14 @@ import Loading from '../../Shared/Loading/Loading';
 import ShowTools from './ShowTools';
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 const Tools = () => {
-    const { data: parts, isLoading } = useQuery('parts', () => fetch('https://agile-eyrie-75679.herokuapp.com/get-parts').then(res => res.json()))
+    const { data: parts, isLoading } = useQuery('parts', () => fetch('https://manufacturer-website.vercel.app/get-parts').then(res => res.json()))
 
     const navigate = useNavigate()
-    const Allproduct= () => {
+    const Allproduct = () => {
         navigate('/products')
     }
-    if(isLoading){
-        <Loading/>
+    if (isLoading) {
+        <Loading />
     }
     return (
         <div>

@@ -27,7 +27,7 @@ const WellcomeDashboard = () => {
                         <MdProductionQuantityLimits className='icon' />
                     </div>
                     <div className='card-text'>
-                        <p>Total Students</p>
+                        <p>Total Products</p>
                         <p>{parts?.length}</p>
                         <div className='progress'>
                             <div class="progress-bar"></div>
@@ -40,7 +40,7 @@ const WellcomeDashboard = () => {
                         <FaUserAlt className='icon' />
                     </div>
                     <div className='card-text'>
-                        <p>Total Product</p>
+                        <p>Total Users</p>
                         <p>{users?.length}</p>
                         <div className='progress'>
                             <div class="progress-bar2"></div>

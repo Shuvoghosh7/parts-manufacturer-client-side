@@ -6,7 +6,7 @@ const useToken = (user) => {
         const email = user?.user?.email
         const currentUser = { email: email }
         if (email) {
-            fetch(`https://manufacturer-website.vercel.app/user/${email}`, {
+            fetch(`https://vertex-technology.onrender.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'Content-type': 'application/json'

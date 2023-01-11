@@ -7,7 +7,7 @@ const MyorderRow = ({ order }) => {
 
     const handealDelete = (deletId) => {
 
-        const url = `https://manufacturer-website.vercel.app/orders/${deletId}`
+        const url = `https://vertex-technology.onrender.com/orders/${deletId}`
         fetch(url, {
             method: 'DELETE'
 

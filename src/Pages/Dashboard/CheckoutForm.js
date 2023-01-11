@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const price = (quantity * price_per_unit)
 
     useEffect(() => {
-        fetch('https://manufacturer-website.vercel.app/create-payment-intent', {
+        fetch('https://vertex-technology.onrender.com/create-payment-intent', {
             method: "POST",
             headers: {
                 'Content-type': 'application/json',
@@ -73,7 +73,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://manufacturer-website.vercel.app/order/${_id}`, {
+            fetch(`https://vertex-technology.onrender.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

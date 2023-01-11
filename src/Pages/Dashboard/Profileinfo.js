@@ -16,7 +16,7 @@ const Profileinfo = ({ info }) => {
             ...data,
             email: user?.email
         };
-        fetch("https://manufacturer-website.vercel.app/profile", {
+        fetch("https://vertex-technology.onrender.com/profile", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -40,7 +40,7 @@ const Profileinfo = ({ info }) => {
          const phoneNumber = event.target.phoneNumber.value
          const LinkedInLink = event.target.LinkedInLink.value
  
-         fetch(`https://manufacturer-website.vercel.app/update-profile/${_id}`, {
+         fetch(`https://vertex-technology.onrender.com/update-profile/${_id}`, {
              method: "PUT",
              headers: {
                  'content-type': 'application/json',

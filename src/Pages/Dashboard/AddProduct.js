@@ -6,7 +6,7 @@ const AddProduct = () => {
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        fetch("https://manufacturer-website.vercel.app/add-parts", {
+        fetch("https://vertex-technology.onrender.com/add-parts", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

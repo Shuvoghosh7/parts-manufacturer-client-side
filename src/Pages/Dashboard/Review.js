@@ -57,7 +57,7 @@ const Review = () => {
     const review = { ...data, rating, email, photoURL, displayName }
     console.log(review);
 
-    fetch("https://manufacturer-website.vercel.app/review", {
+    fetch("https://vertex-technology.onrender.com/review", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -5,7 +5,7 @@ const ManageProductsRow = ({ product, index }) => {
     const { _id, picture, pname, available_quantity, price_per_unit } = product
 
     const handealDelete = (deletId) => {
-        const url = `https://manufacturer-website.vercel.app/detete-parts/${deletId}`
+        const url = `https://vertex-technology.onrender.com/detete-parts/${deletId}`
         fetch(url, {
             method: 'DELETE'
         })
@@ -27,7 +27,7 @@ const ManageProductsRow = ({ product, index }) => {
             available_quantity,
             price_per_unit
         }
-        fetch(`https://manufacturer-website.vercel.app/edit-parts/${_id}`, {
+        fetch(`https://vertex-technology.onrender.com/edit-parts/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json',

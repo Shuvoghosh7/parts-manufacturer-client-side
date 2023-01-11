@@ -6,7 +6,7 @@ import MakeAdminRow from './MakeAdminRow';
 
 const MakeAdmin = () => {
     const navigate = useNavigate()
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://manufacturer-website.vercel.app/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://vertex-technology.onrender.com/user', {
         method: "GET",
         headers: {
             'authorization': `Bearer ${localStorage.getItem('AccessToken')}`

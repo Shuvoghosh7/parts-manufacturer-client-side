@@ -7,7 +7,7 @@ import ManageAllOrdersRow from './ManageAllOrdersRow';
 
 const ManageAllOrders = () => {
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://manufacturer-website.vercel.app/get-order', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://vertex-technology.onrender.com/get-order', {
         method: "GET",
         headers: {
             'content-type': 'application/json',

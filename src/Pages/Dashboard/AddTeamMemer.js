@@ -6,7 +6,7 @@ const AddTeamMemer = () => {
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        fetch("https://manufacturer-website.vercel.app/add-team", {
+        fetch("https://vertex-technology.onrender.com/add-team", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

@@ -6,7 +6,7 @@ import ManageProductsRow from './ManageProductsRow';
 
 
 const ManageProducts = () => {
-    const { data: parts, isLoading } = useQuery('parts', () => fetch('https://manufacturer-website.vercel.app/get-parts').then(res => res.json()))
+    const { data: parts, isLoading } = useQuery('parts', () => fetch('https://vertex-technology.onrender.com/get-parts').then(res => res.json()))
     if (isLoading) {
         return <Loading />
     }

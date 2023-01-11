@@ -14,14 +14,14 @@ const Myprofile = () => {
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
 
 
-    const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://manufacturer-website.vercel.app/get-profile?email=${user.email}`).then(res => res.json()))
+    const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://vertex-technology.onrender.com/get-profile?email=${user.email}`).then(res => res.json()))
 
     const onSubmit = (data) => {
         const profileData = {
             ...data,
             email: user?.email
         };
-        fetch("https://manufacturer-website.vercel.app/profile", {
+        fetch("https://vertex-technology.onrender.com/profile", {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

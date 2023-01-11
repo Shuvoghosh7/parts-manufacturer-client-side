@@ -6,11 +6,11 @@ import { FaUserAlt } from 'react-icons/fa';
 import { useQuery } from 'react-query';
 import SectionTitle from "../../Pages/Shared/SectionTitle/SectionTitle";
 const WellcomeDashboard = () => {
-    const { data: parts, isLoading } = useQuery('parts', () => fetch('https://manufacturer-website.vercel.app/get-parts').then(res => res.json()))
+    const { data: parts, isLoading } = useQuery('parts', () => fetch('https://vertex-technology.onrender.com/get-parts').then(res => res.json()))
 
-    const { data: reviews } = useQuery('review', () => fetch('https://manufacturer-website.vercel.app/get-review').then(res => res.json()))
+    const { data: reviews } = useQuery('review', () => fetch('https://vertex-technology.onrender.com/get-review').then(res => res.json()))
 
-    const { data: users } = useQuery('users', () => fetch('https://manufacturer-website.vercel.app/user', {
+    const { data: users } = useQuery('users', () => fetch('https://vertex-technology.onrender.com/user', {
         method: "GET",
         headers: {
             'authorization': `Bearer ${localStorage.getItem('AccessToken')}`

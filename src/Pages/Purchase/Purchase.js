@@ -16,7 +16,7 @@ const Purchase = () => {
     const { register, watch, formState: { errors }, handleSubmit } = useForm();
 
     useEffect(() => {
-        fetch(`https://manufacturer-website.vercel.app/get-parts/${purchaseId}`)
+        fetch(`https://vertex-technology.onrender.com/get-parts/${purchaseId}`)
             .then(res => res.json())
             .then(data => setParts(data))
 

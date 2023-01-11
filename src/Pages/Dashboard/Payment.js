@@ -9,7 +9,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51L0hWCDu4I2uHR4DpnxPO6LUdEl9Ek43sD78cHMnu2wyiKtiNetsFXakgW3ljI2n8ncmZEBCfbuB6iKhy9O1QBJ100nVvqXQpG');
 const Payment = () => {
     const { id } = useParams()
-    const url = `https://manufacturer-website.vercel.app/order/${id}`
+    const url = `https://vertex-technology.onrender.com/order/${id}`
     const { data: order, isLoading } = useQuery(['profile', id], () => fetch(url, {
         method: "GET",
         headers: {
